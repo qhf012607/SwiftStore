@@ -12,6 +12,14 @@ class ViewController: UIViewController {
     var disposeBag = DisposeBag()
     override func viewDidLoad() {
         super.viewDidLoad()
+//        RONetCenter.requestForHomeText().mapModelArray(type: Product.self).subscribe(onNext: { (data) in
+//
+//        }, onError: { (error) in
+//            let errror = error as! NSError
+//            print(errror.code)
+//        }, onCompleted: {
+//
+//        }, onDisposed: nil).disposed(by: disposeBag)
         RONetCenter.requestForHome().mapModelArray(type: Product.self).subscribe(onNext: { (data) in
 
         }, onError: { (error) in
