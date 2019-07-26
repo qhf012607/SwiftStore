@@ -1,4 +1,4 @@
-module Pods_SwiftAppStore {
+framework module Pods_SwiftAppStore {
   umbrella header "Pods-SwiftAppStore-umbrella.h"
 
   export *

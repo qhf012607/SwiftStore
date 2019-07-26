@@ -12,7 +12,7 @@ import RxSwift
 import Alamofire
 import SwiftyJSON
 
-let server = "https://cn.manxbridge.com"
+let server = "http://111.231.65.73:8080"
 //数据映射错误
 public enum defaultNetError: Error {
     case defaultNetErrorToken
@@ -29,7 +29,7 @@ class RONetTool: NSObject {
             let dic = data as! Dictionary<String, Any>
             print("\n \(responds) \n\n \(dic) jsonString\n")
             return Observable.create({ (observe) -> Disposable in
-                if((dic["data"]) != nil){
+                if(dic["code"] as! Int == 1){
                     observe.onNext(dic["data"]!)
                 }else{
                     observe.onError( NSError(domain: "错误", code: dic["code"] as! Int, userInfo: nil) as Error)
@@ -47,7 +47,7 @@ class RONetTool: NSObject {
             let dic = data as! Dictionary<String, Any>
             print("\n \(responds) \n\n \(dic) jsonString\n")
             return Observable.create({ (observe) -> Disposable in
-                if((dic["data"]) != nil){
+                if(dic["code"] as! Int == 1){
                     observe.onNext(dic["data"]!)
                 }else{
                

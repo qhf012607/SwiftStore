@@ -8,10 +8,13 @@
 
 import UIKit
 import RxSwift
+import FSPagerView
+
 class ViewController: UIViewController {
-    var disposeBag = DisposeBag()
+   
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 //        RONetCenter.requestForHomeText().mapModelArray(type: Product.self).subscribe(onNext: { (data) in
 //
 //        }, onError: { (error) in
@@ -20,13 +23,7 @@ class ViewController: UIViewController {
 //        }, onCompleted: {
 //
 //        }, onDisposed: nil).disposed(by: disposeBag)
-        RONetCenter.requestForHome().mapModelArray(type: Product.self).subscribe(onNext: { (data) in
-
-        }, onError: { (error) in
-
-        }, onCompleted: {
-
-        }, onDisposed: nil).disposed(by: disposeBag)
+       
     
     }
 

@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "1A538A5499B1706F0983D6826042657B"
-               BuildableName = "libRxAlamofire.a"
+               BuildableName = "RxAlamofire.framework"
                BlueprintName = "RxAlamofire"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

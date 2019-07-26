@@ -16,7 +16,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        self.window!.makeKeyAndVisible()
+        self.initMainView()
+      
         return true
+    }
+    
+    func initMainView(){
+        //        let loginController = LoginViewController()
+        //        MCUserManager.shareInstance.jumpToLogin(loginController: loginController)
+        
+        self.window?.rootViewController = MCTabbarController()
+        
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
