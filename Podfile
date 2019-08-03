@@ -12,4 +12,5 @@ pod 'RxCocoa','4.5.0'
 
 pod 'Kingfisher','4.10.0'
 
+pod 'PKHUD', '~> 5.0'
 end

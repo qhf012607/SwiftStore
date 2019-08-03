@@ -24,27 +24,15 @@ open class MCNavegationController: UINavigationController,UINavigationController
         self.navigationBar.isTranslucent = false
         self.interactivePopGestureRecognizer?.delegate = weakSelf
         self.delegate = weakSelf
-      //  self.navigationBar.barTintColor = UIColor.green
-        self.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.GetHexColor(rgbValue: 0xffffff)]
-    }
-    open override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        if !didLoad {
-            //渐变色！
-            let path1 = Bundle(for: self.classForCoder)
-            let image = UIImage.init(named: navImage.count > 0 ? navImage :"navBarColor", in: path1, compatibleWith: nil)
-
-            self.navigationBar.setBackgroundImage(image, for: UIBarMetrics.default)
-            didLoad = true
-        }
-        
+        self.navigationBar.tintColor = UIColor.black;  //返回按钮颜色
+        //self.navigationBar.barTintColor = UIColor.green
+        self.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.black]
+        self.navigationBar.backIndicatorImage = UIImage(named: "icoblacknew")
+        self.navigationBar.backIndicatorTransitionMaskImage = UIImage(named: "icoblacknew")
     }
     open func pushViewController(viewController:UIViewController,animated:Bool,enablePopGesture:Bool) -> Void {
         _enablePopGesture = enablePopGesture
-        if self.viewControllers.count > 0 {
-            let portrait = orientation == .NavegationOrientationVertical ? true : false
-            viewController.navigationItem.leftBarButtonItem = UIBarButtonItem.creatDefaultLeftBarItemWithTarget(target: self, action: #selector(popSelf),portrait:portrait)
-        }
+
         if self.responds(to: #selector(getter: interactivePopGestureRecognizer)) {
             self.interactivePopGestureRecognizer?.isEnabled = false
         }
@@ -59,6 +47,7 @@ open class MCNavegationController: UINavigationController,UINavigationController
         }
     }
     public func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
+        viewController.navigationItem.backBarButtonItem = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil);
         if (self.responds(to: #selector(getter:interactivePopGestureRecognizer)) && _enablePopGesture) {
             self.interactivePopGestureRecognizer?.isEnabled = true
         }

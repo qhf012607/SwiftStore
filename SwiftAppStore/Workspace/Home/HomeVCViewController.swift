@@ -23,7 +23,7 @@ class HomeVCViewController: MCRootViewController {
         super.viewDidLoad()
         self.loadData()
         // Create a page control
-        
+        view.backgroundColor = viewBackColor
     }
     
     func loadData()  {
@@ -103,7 +103,8 @@ class HomeVCViewController: MCRootViewController {
     }
     
     lazy var headButonView: UIView = {
-        let view = UIView(frame: CGRect(x: 0, y: 200, width: screenWith, height: 100))
+        let view = UIView(frame: CGRect(x: 0, y: 200, width: screenWith, height: 150))
+        view.backgroundColor = UIColor.white
         let button = UIButton(frame: CGRect(x: 10, y: 10, width: 40, height: 40))
         button.layer.cornerRadius = 40
         button.setImage(UIImage(named: "discount"), for: .normal)
@@ -123,8 +124,17 @@ class HomeVCViewController: MCRootViewController {
         view.addSubview(labvip)
         labvip.font = UIFont.systemFont(ofSize: 11)
         labvip.textAlignment = .center
-        view.backgroundColor = UIColor(red: 237/255.0, green: 237/255.0, blue: 237/255.0, alpha: 1)
         
+        let viewLine = UIView(frame: CGRect(x: 0, y: 90, width: screenWith, height: 10))
+        viewLine.backgroundColor = viewBackColor
+        view.addSubview(viewLine)
+     //   view.backgroundColor = viewBackColor
+        
+        let labText = UILabel(frame: CGRect(x: 0, y: 100, width: screenWith, height: 50))
+        labText.text = "——————  热卖推荐  ——————"
+        view.addSubview(labText)
+        labText.font = UIFont.systemFont(ofSize: 14)
+        labText.textAlignment = .center
         return view
     }()
 }
@@ -153,7 +163,7 @@ extension HomeVCViewController:UICollectionViewDelegate,UICollectionViewDelegate
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize(width: screenWith, height: 300)
+        return CGSize(width: screenWith, height: 350)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

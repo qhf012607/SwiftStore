@@ -1,15 +1,17 @@
 //
-//  CateViewController.swift
+//  AddressDetailViewController.swift
 //  SwiftAppStore
 //
-//  Created by rhonin on 2019/7/25.
+//  Created by rhonin on 2019/8/3.
 //  Copyright © 2019年 rhonin. All rights reserved.
 //
 
 import UIKit
 
-class CateViewController: MCRootViewController {
+class AddressDetailViewController: UIViewController {
 
+    @IBOutlet weak var area: UITextField!
+    @IBOutlet weak var buttonSelect: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -21,10 +21,10 @@ public enum defaultNetError: Error {
 class RONetTool: NSObject {
    
     
-     class  func rx_postNet(parama:[String:String]?,apimethoud:String) -> Observable<Any> {
+    class  func rx_postNet(parama:[String:Any]?,apimethoud:String,header:[String:String]?) -> Observable<Any> {
         let url = server + apimethoud
         
-        return RxAlamofire.requestJSON(.post, url, parameters: parama, encoding: URLEncoding.default, headers:RONetTool.configHeader(parama: nil)).flatMapLatest({ (arg) ->  Observable<Any> in
+        return RxAlamofire.requestJSON(.post, url, parameters: parama, encoding: URLEncoding.default, headers:RONetTool.configHeader(parama: header)).flatMapLatest({ (arg) ->  Observable<Any> in
             let (responds, data) = arg
             let dic = data as! Dictionary<String, Any>
             print("\n \(responds) \n\n \(dic) jsonString\n")
@@ -40,9 +40,9 @@ class RONetTool: NSObject {
     }
     
     
-    class func rx_getNet(parama:[String:String]?,apimethoud:String)-> Observable<Any> {
+    class func rx_getNet(parama:[String:String]?,apimethoud:String,header:[String:String]?)-> Observable<Any> {
         let url = server + apimethoud
-        return RxAlamofire.requestJSON(.get, url, parameters: parama, encoding: URLEncoding.default, headers: nil).flatMapLatest({ (arg) ->  Observable<Any>  in
+        return RxAlamofire.requestJSON(.get, url, parameters: parama, encoding: URLEncoding.default, headers: RONetTool.configHeader(parama: header)).flatMapLatest({ (arg) ->  Observable<Any>  in
             let (responds, data) = arg
             let dic = data as! Dictionary<String, Any>
             print("\n \(responds) \n\n \(dic) jsonString\n")
@@ -58,14 +58,65 @@ class RONetTool: NSObject {
         })
     }
     
+    class  func rx_postNetWithJson(parama:[String:Any]?,apimethoud:String) -> Observable<Any> {
+        let url = server + apimethoud
+        var request = URLRequest(url: URL(string:url)!)
+        //Following code to pass post json
+        do{
+           
+            request.httpMethod = "POST"
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+         
+            
+            let jsonData = try JSONSerialization.data(withJSONObject: parama ?? [], options: [])
+            let jsonString = String(data: jsonData, encoding: .utf8)
+             request.httpBody =   jsonString?.data(using: .utf8)
+           
+          
+        }catch{
+            
+        }
+        return  RxAlamofire.request(request as URLRequestConvertible).json().asObservable().flatMapLatest({ (arg) ->  Observable<Any> in
+            let (data) = arg
+            let dic = data as! Dictionary<String, Any>
+            print("\n \(responds) \n\n \(dic) jsonString\n")
+            return Observable.create({ (observe) -> Disposable in
+                if(dic["code"] as! Int == 1){
+                    observe.onNext(dic["data"]!)
+                }else{
+                    observe.onError( NSError(domain: "错误", code: dic["code"] as! Int, userInfo: nil) as Error)
+                }
+                return Disposables.create()
+            })
+        } )
+    }
+    
+    
+    class func rx_getNetWithJson(parama:[String:String]?,apimethoud:String,header:[String:String]?)-> Observable<Any> {
+        let url = server + apimethoud
+        return RxAlamofire.requestJSON(.get, url, parameters: parama, encoding: URLEncoding.httpBody, headers: RONetTool.configHeader(parama: header)).flatMapLatest({ (arg) ->  Observable<Any>  in
+            let (responds, data) = arg
+            let dic = data as! Dictionary<String, Any>
+            print("\n \(responds) \n\n \(dic) jsonString\n")
+            return Observable.create({ (observe) -> Disposable in
+                if(dic["code"] as! Int == 1){
+                    observe.onNext(dic["data"]!)
+                }else{
+                    
+                    observe.onError( NSError(domain: "错误", code: dic["code"] as! Int, userInfo: nil) as Error)
+                }
+                return Disposables.create()
+            })
+        })
+    }
+    
     class func configHeader(parama:[String:String]?) -> [String:String]? {
         var dic = Dictionary<String, String>()
         if parama != nil {
             for (key, value) in parama! {
-                dic.updateValue(key, forKey: value)
+                dic.updateValue(value, forKey: key)
             }
         }
-        dic.updateValue("eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjE4NjE1ODFiNGViNTU0YTBhNGQ3MDZjNzZhNWZkYmUyNzlkNzFkZDdlNzFlNTQzOWJjNDMzOTY2NDNkNTdiZDM0Yjc3ZDhkYjViMjZjMzBjIn0.eyJhdWQiOiIxIiwianRpIjoiMTg2MTU4MWI0ZWI1NTRhMGE0ZDcwNmM3NmE1ZmRiZTI3OWQ3MWRkN2U3MWU1NDM5YmM0MzM5NjY0M2Q1N2JkMzRiNzdkOGRiNWIyNmMzMGMiLCJpYXQiOjE1NjAzMjMzOTcsIm5iZiI6MTU2MDMyMzM5NywiZXhwIjoxNTYwMzI1MTk3LCJzdWIiOiIyMDU1OTQyNzgwMjA4ODIwIiwic2NvcGVzIjpbXX0.XGsStEvn6V5EsCCxdJmqm5IX4up8Nq5GUrdW2WdZ12Sp13oFfehI-VCuVgxRaCSBZt9Cu-uoCk8XZEFjlIX4sbYHpYwYmr1bpLTi9uwDFjliAHg9ij71PVwFsvF-HSlhfeUjIm50IZSj3ZfMhLTlYtvvXSTi557tOSaxEM-oYcAX-B0-zqaTmdtjDwbccSICuY8a2tIODNldKN2hY6YhfWF_SOsimkTIVK45ITEPAn_Oa8-gK_jv_i5hhyTJ2eBLxkraqGJpZSvrmGZFROViup12oGzvQbwwdHsoN-wd9jVFvWcekN9_7I0JpcagRqDImarNG1oiSAgtv14glV4qY30aRIiCc8reG0mZKs4dO_kYhGZGXPqIt1So2zxyEsEhOjGhgRzUyiuUMOp0RR73hXW2LgulckGiv14obdraovrlIZIsWZwu3Wg4bclPoLY0wGu2CrF_EfrydaU5wKf0_2KV43dyraZ9AuxKG7omf5kTDTPTkWUXgLbzRGhVgQoLZoXu32Dmr46ZItzDaZzMlMS5l-fUd7vER7rshU-7905fVQmwOmx6K6JRGMITRO3n3iTHwOkZO0WsBoUDP37q5F5PCehapZEWhzCVJ-knfKvnPSth1eGAgIb6gzErjo3rCfAnbOPTBwkPGA6zzukuDa1wOdHklElgdbhccqvOprE", forKey: "Authorization")
         return dic;
     }
 }
@@ -85,17 +136,18 @@ public extension Observable where Element:Any{
     /// - Returns: model
     public func mapModel<T>(type:T.Type) -> Observable<T> where T:Codable{
         return self.map({ (element) -> T in
-            let jsonData = try (element as! JSON).rawData() 
+            let jsonData = element as! [String:Any]
+            let data = try JSONSerialization.data(withJSONObject: jsonData, options: [])
             let decoder = JSONDecoder()
             do {
-                guard let obj = try? decoder.decode(T.self, from: jsonData ) else{
+                guard let obj = try? decoder.decode(T.self, from: data ) else{
                      throw RxMapModelError.parsingError
                 }
                 return obj
             }catch {
                 print(error)
             }
-            return ErrorModel() as! T
+            return  T.self as! T
         })
     }
     
@@ -111,16 +163,14 @@ public extension Observable where Element:Any{
             let dic = element as! [[String:Any]]
             let data = try JSONSerialization.data(withJSONObject: dic, options: [])
             let decoder = JSONDecoder()
+            let array:[T]?
             do {
-                guard let dataArray : [T] = try? decoder.decode([T].self, from: data) else {
-                    
-                    throw RxMapModelError.parsingError
-                }
-                return dataArray
+                let dataArray : [T] = try! decoder.decode([T].self, from: data)
+               array = dataArray
             }catch {
                 print(error)
             }
-            return [ErrorModel()] as! [T]
+            return  array ?? [T]()
         })
     }
 }

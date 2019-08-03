@@ -17,6 +17,14 @@ public let screenHeight = UIScreen.main.bounds.size.height
 public let NavStatusHeight = 44 + UIApplication.shared.statusBarFrame.size.height
 
 public let statusHeight = UIApplication.shared.statusBarFrame.size.height
+
+
+public let viewLineColor = UIColor(red: 225/255.0, green: 229/255.0, blue: 233/255.0, alpha: 1)
+/*
+ 
+ 通知
+ */
+public let viewBackColor = UIColor(red: 237/255.0, green: 237/255.0, blue: 237/255.0, alpha: 1)
 /*
  
         通知

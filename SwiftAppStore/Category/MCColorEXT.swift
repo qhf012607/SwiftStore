@@ -16,4 +16,11 @@ extension UIColor{
         let blue  = ((CGFloat)(rgbValue & 0xFF))/255.0
         return UIColor(red: red, green: green, blue: blue, alpha: 1.0)
     }
+    
+    public class func GetRGBColor(R:Int,G:Int,B:Int) -> UIColor {
+        let red = CGFloat(R)/255.0
+        let green = CGFloat(G)/255.0
+        let blue  = CGFloat(B)/255.0
+        return UIColor(red: red, green: green, blue: blue, alpha: 1)
+    }
 }

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProductViewController" customModule="SwiftAppStore" customModuleProvider="target">
+            <connections>
+                <outlet property="addCarBt" destination="4VU-8I-ihC" id="iEe-oB-UzL"/>
+                <outlet property="carButtnon" destination="s5s-Xh-Jky" id="uNN-dp-cj4"/>
+                <outlet property="collectBtn" destination="bGW-qC-dyY" id="3xA-ik-3oi"/>
+                <outlet property="orderBtn" destination="VZM-hK-7qj" id="wAV-qM-wxD"/>
+                <outlet property="table" destination="Zp8-l0-acx" id="sw2-aD-4nb"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Zp8-l0-acx">
+                    <rect key="frame" x="0.0" y="20" width="375" height="583"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="qDz-Zd-mdv"/>
+                        <outlet property="delegate" destination="-1" id="PD5-If-f3e"/>
+                    </connections>
+                </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bGW-qC-dyY">
+                    <rect key="frame" x="15" y="607" width="50" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="6ka-IZ-ZkZ"/>
+                        <constraint firstAttribute="width" constant="50" id="Stj-Jy-36U"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <state key="normal" title="收藏" image="collect">
+                        <color key="titleColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="collect:" destination="-1" eventType="touchUpInside" id="SVq-YW-tT2"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s5s-Xh-Jky">
+                    <rect key="frame" x="75" y="607" width="50" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="PS9-dH-0Xi"/>
+                        <constraint firstAttribute="width" constant="50" id="j7z-j9-Xvj"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <state key="normal" title="购物车" image="shopCar">
+                        <color key="titleColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="gotoCar:" destination="-1" eventType="touchUpInside" id="8Bk-LR-7NM"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VZM-hK-7qj">
+                    <rect key="frame" x="269" y="618" width="90" height="34"/>
+                    <color key="backgroundColor" red="0.84817165798611116" green="0.46107552330628282" blue="0.15013076943524797" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="90" id="n2R-ZZ-aen"/>
+                        <constraint firstAttribute="height" constant="34" id="weY-vT-28a"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <state key="normal" title="立即下单">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="gotoOrder:" destination="-1" eventType="touchUpInside" id="on3-V6-ThP"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4VU-8I-ihC">
+                    <rect key="frame" x="169" y="618" width="90" height="34"/>
+                    <color key="backgroundColor" red="0.0" green="0.84817165798611116" blue="0.0" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <state key="normal" title="加入购物车">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="VZM-hK-7qj" firstAttribute="top" secondItem="Zp8-l0-acx" secondAttribute="bottom" constant="15" id="4nQ-tZ-s7I"/>
+                <constraint firstItem="Zp8-l0-acx" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="LA7-2W-Hcu"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Zp8-l0-acx" secondAttribute="bottom" constant="64" id="LqE-tx-ZLG"/>
+                <constraint firstItem="VZM-hK-7qj" firstAttribute="height" secondItem="4VU-8I-ihC" secondAttribute="height" id="Wui-fq-6m9"/>
+                <constraint firstItem="VZM-hK-7qj" firstAttribute="width" secondItem="4VU-8I-ihC" secondAttribute="width" id="bkE-XY-qIT"/>
+                <constraint firstItem="Zp8-l0-acx" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="fc9-9j-j3i"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="bGW-qC-dyY" secondAttribute="bottom" constant="20" id="gFr-Lj-cBh"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="s5s-Xh-Jky" secondAttribute="bottom" constant="20" id="gty-7o-dRv"/>
+                <constraint firstItem="VZM-hK-7qj" firstAttribute="centerY" secondItem="4VU-8I-ihC" secondAttribute="centerY" id="hTw-Nt-g5s"/>
+                <constraint firstItem="VZM-hK-7qj" firstAttribute="leading" secondItem="4VU-8I-ihC" secondAttribute="trailing" constant="10" id="iFe-1f-s08"/>
+                <constraint firstItem="bGW-qC-dyY" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="nNl-nQ-DiE"/>
+                <constraint firstItem="Zp8-l0-acx" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="phe-Jk-OKe"/>
+                <constraint firstItem="s5s-Xh-Jky" firstAttribute="leading" secondItem="bGW-qC-dyY" secondAttribute="trailing" constant="10" id="qFC-3Z-SG3"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="VZM-hK-7qj" secondAttribute="trailing" constant="16" id="upt-tg-2YY"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="138.40000000000001" y="107.49625187406298"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="collect" width="32" height="32"/>
+        <image name="shopCar" width="32" height="32"/>
+    </resources>
+</document>

@@ -10,6 +10,7 @@ import UIKit
 import RxSwift
 import SnapKit
 import RxCocoa
+import PKHUD
 
 open class MCRootViewController: UIViewController {
     public var dicParam : Dictionary<String, Any>?
@@ -22,6 +23,7 @@ open class MCRootViewController: UIViewController {
         self.view.backgroundColor = UIColor.GetHexColor(rgbValue: 0xf4f4f4)
         uiConfig()
     }
+    
     
     func uiConfig() {
         view.addSubview(reloadButton)

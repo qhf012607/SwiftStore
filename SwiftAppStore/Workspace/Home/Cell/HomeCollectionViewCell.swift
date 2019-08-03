@@ -17,8 +17,11 @@ class HomeCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imageV: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.backgroundColor = UIColor.clear
         coreView.layer.borderWidth = 1
-        coreView.layer.borderColor = UIColor.lightGray.cgColor
+        coreView.layer.borderColor = viewBackColor.cgColor
+        coreView.layer.cornerRadius = 3
+        button.layer.cornerRadius = 5
         // Initialization code
     }
     func configCell(product:Product)  {
