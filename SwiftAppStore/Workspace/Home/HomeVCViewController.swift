@@ -24,10 +24,12 @@ class HomeVCViewController: MCRootViewController {
         self.loadData()
         // Create a page control
         view.backgroundColor = viewBackColor
+        HudTool.showloding()
     }
     
     func loadData()  {
         RONetCenter.requestForHome().mapModelArray(type: Product.self).subscribe(onNext: { [weak self] (data) in
+            HudTool.hiddloading()
             self?.arrayData = data
             self?.ui()
             }, onError: { [weak self](error) in
@@ -162,6 +164,14 @@ extension HomeVCViewController:UICollectionViewDelegate,UICollectionViewDelegate
         return UICollectionReusableView()
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let model = arrayData[indexPath.row]
+        let cont = ProductViewController()
+        cont.product_id = model.productId
+        cont.cate = model
+        self.navigationController?.pushViewController(cont, animated: true)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         return CGSize(width: screenWith, height: 350)
     }
@@ -185,7 +195,26 @@ extension HomeVCViewController:UICollectionViewDelegate,UICollectionViewDelegate
     func pagerViewDidScroll(_ pagerView: FSPagerView) {
         self.pagecontroll?.currentPage  = pagerView.currentIndex
     }
-    
+    func pagerView(_ pagerView: FSPagerView, didSelectItemAt index: Int) {
+        var id = "14"
+        var title = ""
+        
+        if index == 0 {
+            id = "41"
+            title = "足球"
+        }else if index == 1{
+            id = "42"
+             title = "蓝球"
+        }else{
+            id = "25"
+             title = "网球"
+        }
+        let vc = CateSecondLevelViewController()
+        vc.cateID = id
+        vc.hiddenNav = false
+        vc.title = title
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
    
     
 }

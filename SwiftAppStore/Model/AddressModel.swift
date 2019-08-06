@@ -8,10 +8,14 @@
 
 import UIKit
 
-class AddressModel: NSObject {
+class AddressModel: NSObject,Codable {
+    
     var name = ""
     var tele = ""
     var address = ""
-    
+    var defalt = true
+    override init() {
+        super.init()
+    }
     
 }

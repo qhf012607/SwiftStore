@@ -12,7 +12,7 @@ import RxCocoa
 
 class PurchaseView: UIView ,UITableViewDelegate,UITableViewDataSource{
     
-    var clickBlcik : ((NSInteger)->())?
+    var clickBlcik : ((NSInteger,NSInteger)->())?
     
     let viewHead = UIView()
     let viewBack = UIView()
@@ -153,13 +153,13 @@ class PurchaseView: UIView ,UITableViewDelegate,UITableViewDataSource{
             HudTool.showflashMessage(message: "请选择规格")
         }else{
             if (self.clickBlcik != nil){
-                self.clickBlcik!(selecIndex)
+                self.clickBlcik!(selecIndex,number)
             }
             hiddenSelf()
         }
     }
     
-    func reloadTable(array:[String],surBtnClick:@escaping (NSInteger)->()) {
+    func reloadTable(array:[String],surBtnClick:@escaping (NSInteger,NSInteger)->()) {
         self.arrayData = array
 
         self.table.reloadData()

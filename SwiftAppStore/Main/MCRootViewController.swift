@@ -27,6 +27,11 @@ open class MCRootViewController: UIViewController {
     
     func uiConfig() {
         view.addSubview(reloadButton)
+        reloadButton.setTitle("重新加载", for: .normal)
+        reloadButton.backgroundColor = UIColor.white
+        reloadButton.titleLabel?.font = UIFont.systemFont(ofSize: 14)
+        reloadButton.setTitleColor(UIColor.black, for: .normal)
+        reloadButton.layer.cornerRadius = 20;
         reloadButton.snp.makeConstraints { (make) in
             make.width.equalTo(100)
             make.height.equalTo(40)

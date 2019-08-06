@@ -30,7 +30,11 @@ class RONetTool: NSObject {
             print("\n \(responds) \n\n \(dic) jsonString\n")
             return Observable.create({ (observe) -> Disposable in
                 if(dic["code"] as! Int == 1){
-                    observe.onNext(dic["data"]!)
+                    if dic["data"] != nil{
+                        observe.onNext(dic["data"]!)
+                    }else{
+                        observe.onNext(dic["message"]!)
+                    }
                 }else{
                     observe.onError( NSError(domain: "错误", code: dic["code"] as! Int, userInfo: nil) as Error)
                 }
@@ -48,7 +52,11 @@ class RONetTool: NSObject {
             print("\n \(responds) \n\n \(dic) jsonString\n")
             return Observable.create({ (observe) -> Disposable in
                 if(dic["code"] as! Int == 1){
-                    observe.onNext(dic["data"]!)
+                    if dic["data"] != nil{
+                        observe.onNext(dic["data"]!)
+                    }else{
+                        observe.onNext(dic["message"]!)
+                    }
                 }else{
                
                     observe.onError( NSError(domain: "错误", code: dic["code"] as! Int, userInfo: nil) as Error)
@@ -82,7 +90,16 @@ class RONetTool: NSObject {
             print("\n \(responds) \n\n \(dic) jsonString\n")
             return Observable.create({ (observe) -> Disposable in
                 if(dic["code"] as! Int == 1){
-                    observe.onNext(dic["data"]!)
+                    if dic["data"] != nil{
+                        if dic["data"] != nil{
+                            observe.onNext(dic["data"]!)
+                        }else{
+                            observe.onNext(dic["message"]!)
+                        }
+                    }else{
+                        observe.onNext(dic["message"]!)
+                    }
+                  
                 }else{
                     observe.onError( NSError(domain: "错误", code: dic["code"] as! Int, userInfo: nil) as Error)
                 }

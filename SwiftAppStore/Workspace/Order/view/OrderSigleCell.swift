@@ -13,12 +13,14 @@ import RxCocoa
 
 class OrderSigleCell: UITableViewCell {
 
+    @IBOutlet weak var attribitelab: UILabel!
     @IBOutlet weak var viewHose: UIView!
     @IBOutlet weak var count: UILabel!
     @IBOutlet weak var price: UILabel!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var imageHead: UIImageView!
     var product : Product?
+    var countbock : (()->())?
     
     let subject = BehaviorRelay<String>(value: "1")
     let bag = DisposeBag()
@@ -40,6 +42,7 @@ class OrderSigleCell: UITableViewCell {
         // Initialization code
         self.backgroundColor = viewBackColor
         viewHose.layer.cornerRadius = 5
+        self.selectionStyle = .none
     }
     
     func config(model:Product) {
@@ -51,15 +54,32 @@ class OrderSigleCell: UITableViewCell {
         imageHead.kf_loadimageWithUrlString(url: model.productImage)
     }
     
+    func configCar(model:Product)  {
+        attribitelab.textColor = viewLineColor
+        attribitelab.backgroundColor = UIColor.clear
+        attribitelab.text = model.attribute
+        name.text = model.productName
+        price.text = model.productPrice1
+        number = model.buyCount ?? 1
+        product = model
+        name.text = product?.productName
+        imageHead.kf_loadimageWithUrlString(url: model.productImage)
+    }
+    
     @IBAction func reduce(_ sender: Any) {
         number -= 1
         product?.buyCount = number
+        if (self.countbock != nil) {
+            self.countbock!()
+        }
     }
     
     @IBAction func add(_ sender: Any) {
          number += 1
          product?.buyCount = number
-       
+        if (self.countbock != nil) {
+            self.countbock!()
+        }
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

@@ -25,7 +25,7 @@ open class MCTabbarController: UITabBarController {
     func setDefault() {
         self.addChildController(controller: HomeVCViewController(), title: "推荐", selectedImage: "Recomand", nornalImage: "RecomandUN", tag: 1)
          self.addChildController(controller: CateViewController(), title: "分类", selectedImage: "cate", nornalImage: "cateUN", tag: 1)
-         self.addChildController(controller: HomeVCViewController(), title: "购物车", selectedImage: "car", nornalImage: "carUN", tag: 1)
+         self.addChildController(controller: CarViewController(), title: "购物车", selectedImage: "car", nornalImage: "carUN", tag: 1)
          self.addChildController(controller: HomeVCViewController(), title: "我的", selectedImage: "my", nornalImage: "myUN", tag: 1)
     }
     

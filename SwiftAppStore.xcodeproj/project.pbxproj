@@ -31,6 +31,13 @@
 		D53DD1A722EAAB8B00CFF8DB /* HomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D53DD1A522EAAB8B00CFF8DB /* HomeCollectionViewCell.xib */; };
 		D53DD1A922EAC98700CFF8DB /* UIImageViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53DD1A822EAC98700CFF8DB /* UIImageViewExt.swift */; };
 		D548084622F2DBC500379833 /* PurchaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D548084522F2DBC500379833 /* PurchaseView.swift */; };
+		D569390322F7D2A5004227A9 /* area.plist in Resources */ = {isa = PBXBuildFile; fileRef = D56938FD22F7D2A5004227A9 /* area.plist */; };
+		D569390422F7D2A5004227A9 /* EWAddressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56938FE22F7D2A5004227A9 /* EWAddressModel.swift */; };
+		D569390522F7D2A5004227A9 /* EWAddressPickViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56938FF22F7D2A5004227A9 /* EWAddressPickViewTableViewCell.swift */; };
+		D569390622F7D2A5004227A9 /* EWAddressPickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D569390022F7D2A5004227A9 /* EWAddressPickView.swift */; };
+		D569390722F7D2A5004227A9 /* EWAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D569390122F7D2A5004227A9 /* EWAddressViewController.swift */; };
+		D569390822F7D2A5004227A9 /* EWAddressPresentAnimated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D569390222F7D2A5004227A9 /* EWAddressPresentAnimated.swift */; };
+		D569390A22F7DDD1004227A9 /* MCFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D569390922F7DDD1004227A9 /* MCFileManager.swift */; };
 		D57B2A6022E6F8E9001B0EFF /* RONetCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57B2A5F22E6F8E9001B0EFF /* RONetCenter.swift */; };
 		D57B2A6222E701BC001B0EFF /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57B2A6122E701BC001B0EFF /* HomeModel.swift */; };
 		D57B2A6522E805C9001B0EFF /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57B2A6422E805C9001B0EFF /* Product.swift */; };
@@ -43,6 +50,11 @@
 		D59C563922E93FFB00C8D8BF /* HomeVCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59C563722E93FFB00C8D8BF /* HomeVCViewController.swift */; };
 		D59C563A22E93FFB00C8D8BF /* HomeVCViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D59C563822E93FFB00C8D8BF /* HomeVCViewController.xib */; };
 		D5AD1EA922E59C2C0060256D /* RONetTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AD1EA822E59C2C0060256D /* RONetTool.swift */; };
+		D5AF8BD522F81208003D021F /* CouponsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AF8BD322F81208003D021F /* CouponsViewController.swift */; };
+		D5AF8BD622F81208003D021F /* CouponsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5AF8BD422F81208003D021F /* CouponsViewController.xib */; };
+		D5AF8BD822F816DA003D021F /* Coupous.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AF8BD722F816DA003D021F /* Coupous.swift */; };
+		D5AF8BDC22F81FE2003D021F /* CouponsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AF8BDA22F81FE2003D021F /* CouponsCell.swift */; };
+		D5AF8BDD22F81FE2003D021F /* CouponsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5AF8BDB22F81FE2003D021F /* CouponsCell.xib */; };
 		D5C7133022EE8BE20005F352 /* CateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C7132E22EE8BE20005F352 /* CateViewController.swift */; };
 		D5C7133122EE8BE20005F352 /* CateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5C7132F22EE8BE20005F352 /* CateViewController.xib */; };
 		D5C7133322EE91B50005F352 /* CateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C7133222EE91B50005F352 /* CateModel.swift */; };
@@ -59,6 +71,14 @@
 		D5C7134E22F15F290005F352 /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C7134C22F15F290005F352 /* ProductViewController.swift */; };
 		D5C7134F22F15F290005F352 /* ProductViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5C7134D22F15F290005F352 /* ProductViewController.xib */; };
 		D5C7135122F161950005F352 /* ProductDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C7135022F161950005F352 /* ProductDetail.swift */; };
+		D5C97ADD22F9100800C7ED59 /* CoupousSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C97ADB22F9100800C7ED59 /* CoupousSelectViewController.swift */; };
+		D5C97ADE22F9100800C7ED59 /* CoupousSelectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5C97ADC22F9100800C7ED59 /* CoupousSelectViewController.xib */; };
+		D5C97AE222F92ED500C7ED59 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C97AE022F92ED500C7ED59 /* LoginViewController.swift */; };
+		D5C97AE322F92ED500C7ED59 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5C97AE122F92ED500C7ED59 /* LoginViewController.xib */; };
+		D5C97AE622F9488F00C7ED59 /* RegistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C97AE422F9488F00C7ED59 /* RegistViewController.swift */; };
+		D5C97AE722F9488F00C7ED59 /* RegistViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5C97AE522F9488F00C7ED59 /* RegistViewController.xib */; };
+		D5C97AE922F94DEC00C7ED59 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C97AE822F94DEC00C7ED59 /* User.swift */; };
+		D5C97AEB22F94F5000C7ED59 /* AdminTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C97AEA22F94F5000C7ED59 /* AdminTool.swift */; };
 		D5DBCF0E22F4284F00C30150 /* HudTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DBCF0D22F4284F00C30150 /* HudTool.swift */; };
 		D5DBCF1222F42FB800C30150 /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DBCF1022F42FB800C30150 /* OrderViewController.swift */; };
 		D5DBCF1322F42FB800C30150 /* OrderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5DBCF1122F42FB800C30150 /* OrderViewController.xib */; };
@@ -116,6 +136,13 @@
 		D53DD1A522EAAB8B00CFF8DB /* HomeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCollectionViewCell.xib; sourceTree = "<group>"; };
 		D53DD1A822EAC98700CFF8DB /* UIImageViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExt.swift; sourceTree = "<group>"; };
 		D548084522F2DBC500379833 /* PurchaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseView.swift; sourceTree = "<group>"; };
+		D56938FD22F7D2A5004227A9 /* area.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = area.plist; sourceTree = "<group>"; };
+		D56938FE22F7D2A5004227A9 /* EWAddressModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EWAddressModel.swift; sourceTree = "<group>"; };
+		D56938FF22F7D2A5004227A9 /* EWAddressPickViewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EWAddressPickViewTableViewCell.swift; sourceTree = "<group>"; };
+		D569390022F7D2A5004227A9 /* EWAddressPickView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EWAddressPickView.swift; sourceTree = "<group>"; };
+		D569390122F7D2A5004227A9 /* EWAddressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EWAddressViewController.swift; sourceTree = "<group>"; };
+		D569390222F7D2A5004227A9 /* EWAddressPresentAnimated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EWAddressPresentAnimated.swift; sourceTree = "<group>"; };
+		D569390922F7DDD1004227A9 /* MCFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCFileManager.swift; sourceTree = "<group>"; };
 		D57B2A5F22E6F8E9001B0EFF /* RONetCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RONetCenter.swift; sourceTree = "<group>"; };
 		D57B2A6122E701BC001B0EFF /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		D57B2A6422E805C9001B0EFF /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
@@ -134,6 +161,11 @@
 		D59C563722E93FFB00C8D8BF /* HomeVCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVCViewController.swift; sourceTree = "<group>"; };
 		D59C563822E93FFB00C8D8BF /* HomeVCViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeVCViewController.xib; sourceTree = "<group>"; };
 		D5AD1EA822E59C2C0060256D /* RONetTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RONetTool.swift; sourceTree = "<group>"; };
+		D5AF8BD322F81208003D021F /* CouponsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponsViewController.swift; sourceTree = "<group>"; };
+		D5AF8BD422F81208003D021F /* CouponsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CouponsViewController.xib; sourceTree = "<group>"; };
+		D5AF8BD722F816DA003D021F /* Coupous.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coupous.swift; sourceTree = "<group>"; };
+		D5AF8BDA22F81FE2003D021F /* CouponsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponsCell.swift; sourceTree = "<group>"; };
+		D5AF8BDB22F81FE2003D021F /* CouponsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CouponsCell.xib; sourceTree = "<group>"; };
 		D5C7132E22EE8BE20005F352 /* CateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CateViewController.swift; sourceTree = "<group>"; };
 		D5C7132F22EE8BE20005F352 /* CateViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CateViewController.xib; sourceTree = "<group>"; };
 		D5C7133222EE91B50005F352 /* CateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CateModel.swift; sourceTree = "<group>"; };
@@ -150,6 +182,14 @@
 		D5C7134C22F15F290005F352 /* ProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
 		D5C7134D22F15F290005F352 /* ProductViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductViewController.xib; sourceTree = "<group>"; };
 		D5C7135022F161950005F352 /* ProductDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetail.swift; sourceTree = "<group>"; };
+		D5C97ADB22F9100800C7ED59 /* CoupousSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoupousSelectViewController.swift; sourceTree = "<group>"; };
+		D5C97ADC22F9100800C7ED59 /* CoupousSelectViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoupousSelectViewController.xib; sourceTree = "<group>"; };
+		D5C97AE022F92ED500C7ED59 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		D5C97AE122F92ED500C7ED59 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		D5C97AE422F9488F00C7ED59 /* RegistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistViewController.swift; sourceTree = "<group>"; };
+		D5C97AE522F9488F00C7ED59 /* RegistViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegistViewController.xib; sourceTree = "<group>"; };
+		D5C97AE822F94DEC00C7ED59 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		D5C97AEA22F94F5000C7ED59 /* AdminTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminTool.swift; sourceTree = "<group>"; };
 		D5DBCF0D22F4284F00C30150 /* HudTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HudTool.swift; sourceTree = "<group>"; };
 		D5DBCF1022F42FB800C30150 /* OrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
 		D5DBCF1122F42FB800C30150 /* OrderViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderViewController.xib; sourceTree = "<group>"; };
@@ -265,6 +305,32 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		D56938FC22F7D2A5004227A9 /* EWAddressPicker */ = {
+			isa = PBXGroup;
+			children = (
+				D56938FD22F7D2A5004227A9 /* area.plist */,
+				D56938FE22F7D2A5004227A9 /* EWAddressModel.swift */,
+				D56938FF22F7D2A5004227A9 /* EWAddressPickViewTableViewCell.swift */,
+				D569390022F7D2A5004227A9 /* EWAddressPickView.swift */,
+				D569390122F7D2A5004227A9 /* EWAddressViewController.swift */,
+				D569390222F7D2A5004227A9 /* EWAddressPresentAnimated.swift */,
+			);
+			name = EWAddressPicker;
+			path = "../../../../Downloads/EWAddressPicker-Swift-master 2/EWAddressPicker/EWAddressPicker";
+			sourceTree = "<group>";
+		};
+		D569390F22F80E68004227A9 /* Coupon */ = {
+			isa = PBXGroup;
+			children = (
+				D5AF8BD922F81FC4003D021F /* view */,
+				D5AF8BD322F81208003D021F /* CouponsViewController.swift */,
+				D5AF8BD422F81208003D021F /* CouponsViewController.xib */,
+				D5C97ADB22F9100800C7ED59 /* CoupousSelectViewController.swift */,
+				D5C97ADC22F9100800C7ED59 /* CoupousSelectViewController.xib */,
+			);
+			path = Coupon;
+			sourceTree = "<group>";
+		};
 		D57B2A6322E805B3001B0EFF /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -275,6 +341,9 @@
 				D5C7135022F161950005F352 /* ProductDetail.swift */,
 				D5018C3E22F5321100724A0F /* discountModel.swift */,
 				D5018C4522F5771700724A0F /* AddressModel.swift */,
+				D5AF8BD722F816DA003D021F /* Coupous.swift */,
+				D5C97AE822F94DEC00C7ED59 /* User.swift */,
+				D5C97AEA22F94F5000C7ED59 /* AdminTool.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -341,6 +410,8 @@
 		D59C563222E93DF700C8D8BF /* Workspace */ = {
 			isa = PBXGroup;
 			children = (
+				D5C97ADF22F92EBC00C7ED59 /* Login */,
+				D569390F22F80E68004227A9 /* Coupon */,
 				D5018C4022F569B000724A0F /* Address */,
 				D5DBCF0F22F42F9900C30150 /* Order */,
 				D5C7134B22F15EFA0005F352 /* Product */,
@@ -388,6 +459,15 @@
 				D57B2A5F22E6F8E9001B0EFF /* RONetCenter.swift */,
 			);
 			path = Net;
+			sourceTree = "<group>";
+		};
+		D5AF8BD922F81FC4003D021F /* view */ = {
+			isa = PBXGroup;
+			children = (
+				D5AF8BDA22F81FE2003D021F /* CouponsCell.swift */,
+				D5AF8BDB22F81FE2003D021F /* CouponsCell.xib */,
+			);
+			path = view;
 			sourceTree = "<group>";
 		};
 		D5C7132D22EE8BB90005F352 /* Cate */ = {
@@ -441,10 +521,23 @@
 			path = Product;
 			sourceTree = "<group>";
 		};
+		D5C97ADF22F92EBC00C7ED59 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				D5C97AE022F92ED500C7ED59 /* LoginViewController.swift */,
+				D5C97AE122F92ED500C7ED59 /* LoginViewController.xib */,
+				D5C97AE422F9488F00C7ED59 /* RegistViewController.swift */,
+				D5C97AE522F9488F00C7ED59 /* RegistViewController.xib */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		D5DBCF0C22F4283100C30150 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				D56938FC22F7D2A5004227A9 /* EWAddressPicker */,
 				D5DBCF0D22F4284F00C30150 /* HudTool.swift */,
+				D569390922F7DDD1004227A9 /* MCFileManager.swift */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -578,10 +671,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5AF8BD622F81208003D021F /* CouponsViewController.xib in Resources */,
+				D5C97ADE22F9100800C7ED59 /* CoupousSelectViewController.xib in Resources */,
 				D5C7134322F026230005F352 /* CateSecondLevelViewController.xib in Resources */,
 				D5F54A8A22E9429300A7EB61 /* MyViewController.xib in Resources */,
 				D5DBCF2022F431BC00C30150 /* OrderAdressCell.xib in Resources */,
 				D59BA9F722E592D7007D1434 /* LaunchScreen.storyboard in Resources */,
+				D5AF8BDD22F81FE2003D021F /* CouponsCell.xib in Resources */,
+				D569390322F7D2A5004227A9 /* area.plist in Resources */,
 				D5018C4A22F58BC800724A0F /* AddressDetailViewController.xib in Resources */,
 				D5F54A8622E9428400A7EB61 /* CarViewController.xib in Resources */,
 				D5018C4422F569D100724A0F /* AddressViewController.xib in Resources */,
@@ -589,12 +686,14 @@
 				D5C7133122EE8BE20005F352 /* CateViewController.xib in Resources */,
 				D59BA9F422E592D7007D1434 /* Assets.xcassets in Resources */,
 				D5C7133E22EE99790005F352 /* CateRightTableCell.xib in Resources */,
+				D5C97AE322F92ED500C7ED59 /* LoginViewController.xib in Resources */,
 				D5C7133A22EE98560005F352 /* CateLeftTableViewCell.xib in Resources */,
 				D5DBCF1822F4317600C30150 /* OrderSigleCell.xib in Resources */,
 				D5DBCF1C22F431A000C30150 /* orderDiscountCel.xib in Resources */,
 				D53DD1A722EAAB8B00CFF8DB /* HomeCollectionViewCell.xib in Resources */,
 				D5DBCF1322F42FB800C30150 /* OrderViewController.xib in Resources */,
 				D5C7134F22F15F290005F352 /* ProductViewController.xib in Resources */,
+				D5C97AE722F9488F00C7ED59 /* RegistViewController.xib in Resources */,
 				D59C563A22E93FFB00C8D8BF /* HomeVCViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -661,22 +760,31 @@
 				D5C7135122F161950005F352 /* ProductDetail.swift in Sources */,
 				D5392E8122E85743004AAD9D /* String+ExtenSion.swift in Sources */,
 				D5018C3F22F5321100724A0F /* discountModel.swift in Sources */,
+				D5C97ADD22F9100800C7ED59 /* CoupousSelectViewController.swift in Sources */,
 				D5392E6922E84475004AAD9D /* ErrorModel.swift in Sources */,
 				D59C563922E93FFB00C8D8BF /* HomeVCViewController.swift in Sources */,
 				D5C7134E22F15F290005F352 /* ProductViewController.swift in Sources */,
 				D5AD1EA922E59C2C0060256D /* RONetTool.swift in Sources */,
 				D53DD1A922EAC98700CFF8DB /* UIImageViewExt.swift in Sources */,
+				D5AF8BD522F81208003D021F /* CouponsViewController.swift in Sources */,
 				D5DBCF1722F4317600C30150 /* OrderSigleCell.swift in Sources */,
+				D569390722F7D2A5004227A9 /* EWAddressViewController.swift in Sources */,
 				D57B2A6022E6F8E9001B0EFF /* RONetCenter.swift in Sources */,
 				D5392E7D22E85743004AAD9D /* UITextField+Tel.swift in Sources */,
 				D5C7134722F0274D0005F352 /* CateSecondLVCell.swift in Sources */,
+				D569390522F7D2A5004227A9 /* EWAddressPickViewTableViewCell.swift in Sources */,
 				D59BA9EF22E592D5007D1434 /* ViewController.swift in Sources */,
 				D57B2A6222E701BC001B0EFF /* HomeModel.swift in Sources */,
 				D59BA9ED22E592D5007D1434 /* AppDelegate.swift in Sources */,
+				D569390422F7D2A5004227A9 /* EWAddressModel.swift in Sources */,
+				D569390822F7D2A5004227A9 /* EWAddressPresentAnimated.swift in Sources */,
+				D569390622F7D2A5004227A9 /* EWAddressPickView.swift in Sources */,
 				D5C7133022EE8BE20005F352 /* CateViewController.swift in Sources */,
 				D57B2A6522E805C9001B0EFF /* Product.swift in Sources */,
 				D5392E8322E85743004AAD9D /* UIBarButtonExtension.swift in Sources */,
+				D5C97AEB22F94F5000C7ED59 /* AdminTool.swift in Sources */,
 				D5392E8222E85743004AAD9D /* NSStringExt.swift in Sources */,
+				D5C97AE622F9488F00C7ED59 /* RegistViewController.swift in Sources */,
 				D5392E8022E85743004AAD9D /* TableView+ExtenSion.swift in Sources */,
 				D5392E8522E85743004AAD9D /* UILable+Extension.swift in Sources */,
 				D5DBCF0E22F4284F00C30150 /* HudTool.swift in Sources */,
@@ -684,13 +792,17 @@
 				D5C7133D22EE99790005F352 /* CateRightTableCell.swift in Sources */,
 				D5F54A8522E9428400A7EB61 /* CarViewController.swift in Sources */,
 				D5392E6F22E8572A004AAD9D /* MCRootViewController.swift in Sources */,
+				D5AF8BDC22F81FE2003D021F /* CouponsCell.swift in Sources */,
+				D569390A22F7DDD1004227A9 /* MCFileManager.swift in Sources */,
 				D5DBCF1B22F431A000C30150 /* orderDiscountCel.swift in Sources */,
+				D5AF8BD822F816DA003D021F /* Coupous.swift in Sources */,
 				D5392E6E22E8572A004AAD9D /* MCNavegationController.swift in Sources */,
 				D5F54A8922E9429300A7EB61 /* MyViewController.swift in Sources */,
 				D5392E7022E8572A004AAD9D /* MCTabbarController.swift in Sources */,
 				D5C7134222F026230005F352 /* CateSecondLevelViewController.swift in Sources */,
 				D5018C4622F5771700724A0F /* AddressModel.swift in Sources */,
 				D5C7133922EE98560005F352 /* CateLeftTableViewCell.swift in Sources */,
+				D5C97AE222F92ED500C7ED59 /* LoginViewController.swift in Sources */,
 				D548084622F2DBC500379833 /* PurchaseView.swift in Sources */,
 				D5018C4322F569D100724A0F /* AddressViewController.swift in Sources */,
 				D5392E7F22E85743004AAD9D /* UIViewControllerExt.swift in Sources */,
@@ -702,6 +814,7 @@
 				D5392E8422E85743004AAD9D /* MCColorEXT.swift in Sources */,
 				D5DBCF1F22F431BC00C30150 /* OrderAdressCell.swift in Sources */,
 				D53DD1A622EAAB8B00CFF8DB /* HomeCollectionViewCell.swift in Sources */,
+				D5C97AE922F94DEC00C7ED59 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -62,11 +62,9 @@ class ProductViewController: MCRootViewController {
     @IBAction func collect(_ sender: Any) {
     }
     @IBAction func gotoOrder(_ sender: Any) {
-        let model = self.cate
-        let cont = OrderViewController()
-        cont.array = [model] as! [Product]
-        self.navigationController?.pushViewController(cont, animated: true)
+       self.orderNow()
     }
+    
     func load()  {
       
        
@@ -97,6 +95,40 @@ class ProductViewController: MCRootViewController {
         // Pass the selected object to the new view controller.
     }
     */
+   func orderNow()  {
+        var array = [String]()
+        for (_,value) in (model?.attribute)! {
+            array = value
+        }
+        viewPurchase = PurchaseView()
+        UIApplication.shared.delegate!.window!!.addSubview(viewPurchase)
+        self.viewPurchase.reloadTable(array: array) {[weak self] (index,number) in
+            let attribute = array[index]
+            self!.cate?.attribute = attribute
+            self!.cate?.buyCount = number
+            self!.gotoOder()
+        }
+        viewPurchase.snp.makeConstraints { (make) in
+            make.left.right.equalTo(0)
+            make.top.equalTo(screenHeight)
+            make.height.equalTo(screenHeight)
+        }
+        UIView.animate(withDuration: 1.5, animations: {
+            
+            self.viewPurchase.snp.updateConstraints({ (make) in
+                make.top.equalTo(0)
+            })
+            UIApplication.shared.delegate!.window!!.setNeedsDisplay()
+        }, completion: nil)
+        
+    }
+    func gotoOder() {
+        
+        let model = self.cate
+        let cont = OrderViewController()
+        cont.array = [model] as! [Product]
+        self.navigationController?.pushViewController(cont, animated: true)
+    }
     
     @objc func addshipCar()  {
         var array = [String]()
@@ -105,8 +137,14 @@ class ProductViewController: MCRootViewController {
         }
         viewPurchase = PurchaseView()
         UIApplication.shared.delegate!.window!!.addSubview(viewPurchase)
-        self.viewPurchase.reloadTable(array: array) { (index) in
-            
+        self.viewPurchase.reloadTable(array: array) {[weak self] (index,number) in
+            let attribute = array[index]
+            self!.cate?.attribute = attribute
+            self!.cate?.buyCount = number
+//            self!.gotoOder()
+            let dic = ["userid","1001"]
+            RONetCenter.addcarRequest(dic: <#T##[String : String]#>)
+            //加入购物车
         }
         viewPurchase.snp.makeConstraints { (make) in
             make.left.right.equalTo(0)
@@ -120,10 +158,9 @@ class ProductViewController: MCRootViewController {
             })
              UIApplication.shared.delegate!.window!!.setNeedsDisplay()
         }, completion: nil)
-        
-        
     
     }
+    
     lazy var middleView: UIView = {
         let v = UIView(frame: CGRect(x: 0, y: 250, width: screenWith, height: 160))
     //    v.backgroundColor = UIColor.yellow

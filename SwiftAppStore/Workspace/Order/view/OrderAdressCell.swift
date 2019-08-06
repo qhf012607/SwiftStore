@@ -19,6 +19,7 @@ class OrderAdressCell: UITableViewCell {
         // Initialization code
          self.backgroundColor = viewBackColor
         viewHead.layer.cornerRadius = 5
+        self.selectionStyle = .none
     }
     
     func configCell(model:AddressModel) {

@@ -27,7 +27,7 @@ class CateSecondLVCell: UITableViewCell {
         name.text = model.productName
         read.text = "\(model.hits)人浏览"
         imagehead.kf_loadimageWithUrlString(url: model.productImage)
-        
+        self.selectionStyle = .none
     }
 //
     override func setSelected(_ selected: Bool, animated: Bool) {

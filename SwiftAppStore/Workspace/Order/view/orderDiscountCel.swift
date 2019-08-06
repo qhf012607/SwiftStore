@@ -17,19 +17,26 @@ class orderDiscountCel: UITableViewCell {
     @IBOutlet weak var price: UILabel!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var widthSnp: NSLayoutConstraint!
+    var couponsselect : (()->())?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+        self.selectionStyle = .none
     }
     
     func config(model:discountModel) {
-        acturlyPay.text = model.price1
+        acturlyPay.text = model.sholdPay
         discountLab.text = model.price3
         deliveryAmount.text = model.deliverCont
         totolPrice.text = model.price2
-        
+        price.text = model.stringDiscaount
     }
     
+    @IBAction func selectCouponse(_ sender: Any) {
+        if self.couponsselect != nil {
+            self.couponsselect!()
+        }
+    }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

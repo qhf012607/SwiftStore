@@ -23,4 +23,12 @@ class Product : Codable{
     var productName : String
     var buyCount : Int?
     
+    var price1Num: String {
+        let priceOne = productPrice1.replacingOccurrences(of: "￥", with: "")
+      //  let new =  Float(priceSen)! - Float(priceOne)!
+        
+        return priceOne
+    }
+    var attribute :String?
+    
 }

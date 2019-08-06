@@ -116,6 +116,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="attribitelab" destination="pNN-UT-0qL" id="60B-pl-HY9"/>
                 <outlet property="count" destination="xxi-ht-lfg" id="igU-Sa-ELM"/>
                 <outlet property="imageHead" destination="Jli-yx-UAR" id="wo7-G2-873"/>
                 <outlet property="name" destination="Iky-6N-Qci" id="8Jw-In-zyy"/>

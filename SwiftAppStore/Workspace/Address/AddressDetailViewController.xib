@@ -12,8 +12,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddressDetailViewController" customModule="SwiftAppStore" customModuleProvider="target">
             <connections>
+                <outlet property="addressDetail" destination="7eH-Q2-zWa" id="Gn1-IP-JWJ"/>
                 <outlet property="area" destination="6Zd-tQ-EHs" id="zCE-xf-i6R"/>
                 <outlet property="buttonSelect" destination="rZf-Jd-xTR" id="7gU-fC-z3M"/>
+                <outlet property="name" destination="UZy-u9-kSY" id="w6C-ng-Y0q"/>
+                <outlet property="selectView" destination="Y0j-aa-e5O" id="qlg-cd-c3G"/>
+                <outlet property="tel" destination="at6-bF-wqe" id="tU9-ln-6MX"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -98,7 +102,7 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Zd-tQ-EHs">
+                        <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Zd-tQ-EHs">
                             <rect key="frame" x="111" y="0.0" width="242" height="40"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="242" id="iwv-31-E0F"/>
@@ -158,12 +162,13 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rZf-Jd-xTR">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rZf-Jd-xTR">
                             <rect key="frame" x="325" y="10" width="30" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="2cz-GO-n3G"/>
                                 <constraint firstAttribute="width" constant="30" id="mOY-n9-1I9"/>
                             </constraints>
+                            <state key="normal" image="selected"/>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -196,4 +201,7 @@
             <point key="canvasLocation" x="53.600000000000001" y="102.99850074962519"/>
         </view>
     </objects>
+    <resources>
+        <image name="selected" width="32" height="32"/>
+    </resources>
 </document>

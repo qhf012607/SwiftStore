@@ -28,12 +28,14 @@ class CateViewController: MCRootViewController {
         lableCate.textAlignment = .center
         lableCate.font = UIFont.boldSystemFont(ofSize: 17)
         self.leftTable.tableHeaderView = lableCate
-        
+        self.view.backgroundColor = UIColor.white
         self.leftTable.register( UINib(nibName: "CateLeftTableViewCell", bundle: nil), forCellReuseIdentifier: "cateLeft")
         self.leftTable.separatorStyle = .none
         self.rightTable.register(UINib(nibName: "CateRightTableCell", bundle: nil), forCellReuseIdentifier: "cateRight")
         self.rightTable.separatorStyle = .none
+        HudTool.showloding()
         RONetCenter.requestForCate().mapModelArray(type: CateModel.self).subscribe(onNext: { [weak self](array) in
+            HudTool.hiddloading()
             self?.arrayLeft = array
             for index in  0 ..< (self?.arrayLeft)!.count{
                 let model = self?.arrayLeft[index]

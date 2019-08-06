@@ -12,6 +12,10 @@ class discountModel {
     var price1 = "￥0.00"
     var deliverCont = "￥0.00"
     var price2 = "￥0.00"
+    var priceReally1: Float {
+        let priceOne = price1.replacingOccurrences(of: "￥", with: "")
+         return Float(priceOne)!
+    }
     var price3: String {
         let priceOne = price1.replacingOccurrences(of: "￥", with: "")
         let priceSen = price2.replacingOccurrences(of: "￥", with: "")
@@ -19,5 +23,11 @@ class discountModel {
         
         return "￥\(new)"
     }
-    var stringDiscaount = ""
+    var stringDiscaount = "未使用优惠券"
+    var coupousCout = 0.00
+    var sholdPay = ""
+    var sholdpayNum:String{
+        return sholdPay.replacingOccurrences(of: "￥", with: "")
+    }
+    
 }

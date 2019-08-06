@@ -13,4 +13,16 @@ class HudTool: NSObject {
       
         HUD.flash(  HUDContentType.label(message),delay:1)
     }
+    
+    class func showLoadingAutoHiden()  {
+        
+        HUD.flash(  HUDContentType.labeledProgress(title: "", subtitle: ""),delay:0.5)
+    }
+    class func showloding(){
+        HUD.show( HUDContentType.labeledProgress(title: "", subtitle: ""))
+    }
+    class func hiddloading() {
+        HUD.hide()
+    }
+    
 }
