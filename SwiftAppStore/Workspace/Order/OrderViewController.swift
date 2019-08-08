@@ -78,7 +78,7 @@ class OrderViewController: MCRootViewController,MCaddressSelected {
     
     @objc func pay(sender:UIButton)  {
         if (AdminTool.share.user?.usercode) == nil {
-            self.present(LoginViewController(), animated: true, completion: nil)
+            self.present( MCNavegationController(rootViewController: LoginViewController()), animated: true, completion: nil)
         }else
         {
         if addressmodel == nil {

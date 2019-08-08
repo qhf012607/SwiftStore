@@ -21,6 +21,8 @@ class LoginViewController: MCRootViewController {
         loginBtn.layer.cornerRadius = 20
         image.layer.cornerRadius = 5
         // Do any additional setup after loading the view.
+        self.title = "登录"
+        
     }
 
 

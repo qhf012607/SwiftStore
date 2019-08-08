@@ -12,5 +12,5 @@ struct ProductDetail:Codable {
     var productId : String
     var productContent : String
     var productImages : String
-    var attribute : Dictionary<String, Array<String>>
+    var attribute : Dictionary<String, Array<String>>?
 }

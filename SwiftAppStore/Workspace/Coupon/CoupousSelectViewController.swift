@@ -24,6 +24,10 @@ class CoupousSelectViewController: MCRootViewController,UITableViewDelegate,UITa
         }
          table.register(UINib(nibName: "CouponsCell", bundle: nil), forCellReuseIdentifier: "couponsUseCell")
         table.reloadData()
+        if array.count == 0 {
+            addEmptyView()
+            HudTool.showflashMessage(message: "暂无优惠券哦~去首页领取吧😁")
+        }
         // Do any additional setup after loading the view.
     }
 
@@ -47,6 +51,14 @@ class CoupousSelectViewController: MCRootViewController,UITableViewDelegate,UITa
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let model = self.array[indexPath.row]
+        if ((self.selectedCoupous) != nil) {
+            self.selectedCoupous!(model)
+            self.navigationController?.popViewController(animated: true)
+        }
+        
+    }
 
     /*
     // MARK: - Navigation

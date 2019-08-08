@@ -30,7 +30,7 @@ class CouponsCell: UITableViewCell {
     }
     
     func setButtonSelect() {
-        btn.setTitle("立即使用", for: .normal)
+        btn.setTitle("已领取", for: .normal)
     }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

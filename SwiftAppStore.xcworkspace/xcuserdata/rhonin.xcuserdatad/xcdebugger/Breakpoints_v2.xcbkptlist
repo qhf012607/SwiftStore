@@ -19,13 +19,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SwiftAppStore/Workspace/Order/OrderViewController.swift"
-            timestampString = "586775053.276037"
+            filePath = "SwiftAppStore/Tool/MCFileManager.swift"
+            timestampString = "586934699.964875"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "81"
-            endingLineNumber = "81"
-            landmarkName = "pay(sender:)"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
+            landmarkName = "resetArray(array:path:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftAppStore/Workspace/My/OrderListViewController.swift"
+            timestampString = "586947702.51106"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "request(state:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

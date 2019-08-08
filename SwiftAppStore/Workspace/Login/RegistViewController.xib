@@ -12,6 +12,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegistViewController" customModule="SwiftAppStore" customModuleProvider="target">
             <connections>
+                <outlet property="confirmPass" destination="xxh-Mm-gs9" id="p5v-mi-7X1"/>
+                <outlet property="pass" destination="McU-6u-qMR" id="buX-cy-RZe"/>
+                <outlet property="tele" destination="3pH-89-JT7" id="ivV-j6-lj3"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -130,6 +133,9 @@
                     <state key="normal" title="注册">
                         <color key="titleColor" red="0.92941176469999998" green="0.94117647059999998" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
+                    <connections>
+                        <action selector="register:" destination="-1" eventType="touchUpInside" id="1Ki-7U-5al"/>
+                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="注册即为同意该" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RPf-BT-w60">
                     <rect key="frame" x="20" y="560" width="100" height="17"/>
@@ -145,6 +151,9 @@
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <state key="normal" title="用户协议"/>
+                    <connections>
+                        <action selector="xieyi:" destination="-1" eventType="touchUpInside" id="BTJ-dg-RXB"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

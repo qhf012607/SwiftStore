@@ -13,5 +13,6 @@ struct User: Codable {
     var usercode : String             //userid
     var point : Int
     var username : String
+  
     
 }

@@ -17,13 +17,58 @@ open class MCRootViewController: UIViewController {
     let reloadButton = UIButton()
     var disposeBag = DisposeBag()
     var uiloaded = false
-    
+    let imageEmpty = UIImageView(frame: .zero)
+    let lab = UILabel(frame: .zero)
+    let emptyView = UIView()
     override open func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.GetHexColor(rgbValue: 0xf4f4f4)
         uiConfig()
+        NotificationCenter.default.addObserver(self, selector: #selector(loginOut), name: NSNotification.Name(rawValue:TokenInvalidNotification), object: nil)
+       
     }
     
+    @objc func loginOut() {
+        MCFileManager.clearUserInfo()
+       
+        self.present( MCNavegationController(rootViewController: LoginViewController()), animated: true, completion: nil)
+    }
+    
+    deinit {
+         NotificationCenter.default.removeObserver(self)
+    }
+    open override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
+    
+    func addEmptyView()  {
+        view.addSubview(emptyView)
+        emptyView.backgroundColor = UIColor.white
+        emptyView.addSubview(imageEmpty)
+        emptyView.addSubview(lab)
+        emptyView.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+        }
+        self.imageEmpty.image = UIImage(named: "empty")
+        self.imageEmpty.snp.makeConstraints { (make) in
+            make.width.height.equalTo(200)
+            make.centerX.equalToSuperview()
+            make.centerY.equalToSuperview()
+        }
+        self.lab.snp.makeConstraints { (make) in
+            make.top.equalTo(self.imageEmpty.snp.bottom).offset(10)
+            make.left.right.equalTo(0)
+            make.height.equalTo(20)
+        }
+        lab.text = "这里空空如也~"
+        lab.textAlignment = .center
+        lab.font = UIFont.systemFont(ofSize: 14)
+    }
+    
+    func removeEmpty() {
+        self.emptyView.removeFromSuperview()
+       // lab.removeFromSuperview()
+    }
     
     func uiConfig() {
         view.addSubview(reloadButton)
@@ -53,9 +98,6 @@ open class MCRootViewController: UIViewController {
     override open func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    deinit {
-        NotificationCenter.default.removeObserver(self)
     }
 
 }

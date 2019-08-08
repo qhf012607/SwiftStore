@@ -33,6 +33,7 @@ class HomeVCViewController: MCRootViewController {
             self?.arrayData = data
             self?.ui()
             }, onError: { [weak self](error) in
+                 HudTool.hiddloading()
                 self?.collect?.removeFromSuperview()
                
                 self?.showReloadButon {

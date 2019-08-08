@@ -51,4 +51,24 @@ class RONetCenter: NSObject {
         let string = "/sports/openapi/add_to_shoppingcar"
         return RONetTool.rx_postNetWithJson(parama: dic, apimethoud: string)
     }
+    
+    class func getCarList(dic:[String:String])-> Observable<Any>{
+        let string = "/sports/openapi/get_shoppingcar_list"
+        return RONetTool.rx_postNetWithJson(parama: dic, apimethoud: string)
+    }
+    
+    class func removeCarGoode(dic:[String:Any])-> Observable<Any>{
+         let string = "/sports/openapi/remove_from_shoppingcar"
+        return RONetTool.rx_postNetWithJson(parama: dic, apimethoud: string)
+    }
+    
+    class func requestOrderList(state:String)-> Observable<Any>{
+        let dic = ["userid":"1001","pageno":"1","state":state]
+          let string = "/sports/openapi/get_orders"
+        return RONetTool.rx_postNetWithJson(parama: dic, apimethoud: string)
+    }
+    class func register(dic:[String:Any])-> Observable<Any>{
+        let string = "/sports/openapi/member_register"
+        return RONetTool.rx_postNetWithJson(parama: dic, apimethoud: string)
+    }
 }

@@ -9,6 +9,11 @@
 import UIKit
 
 extension UIView{
+    func removeAllSubview()  {
+        for v in self.subviews {
+            v.removeFromSuperview()
+        }
+    }
    public var width:CGFloat{
         set{
             self.frame.size.width = newValue

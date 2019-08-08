@@ -9,8 +9,8 @@
 import UIKit
 
 class AdminTool: NSObject {
-    var user:User? = {
+    var user:User?{
       return  MCFileManager.readdefaultUserFile().count > 0 ?  MCFileManager.readdefaultUserFile()[0] : nil
-    }()
+    }
     static let share  = AdminTool()
 }

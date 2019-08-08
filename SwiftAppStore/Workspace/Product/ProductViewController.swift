@@ -54,12 +54,39 @@ class ProductViewController: MCRootViewController {
             
         }, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
         // Do any additional setup after loading the view.
+        var array = MCFileManager.readcollectsProducts()
       
+        for i  in 0 ..< array.count {
+            let product = array[i]
+            if product.productId == cate!.productId{
+                self.collectBtn.setImage(UIImage(named: "collected"), for: .normal)
+                break
+            }
+        }
+       
     }
     
     @IBAction func gotoCar(_ sender: Any) {
+        self.navigationController?.pushViewController(CarViewController(), animated: true)
     }
     @IBAction func collect(_ sender: Any) {
+        var array = MCFileManager.readcollectsProducts()
+        var collect = true
+        for i  in 0 ..< array.count {
+            let product = array[i]
+            if product.productId == cate!.productId{
+                array.remove(at: i)
+                MCFileManager.collectDefaultArrayProduct(array: array)
+                collect = false
+                self.collectBtn.setImage(UIImage(named: "collect"), for: .normal)
+                break
+            }
+        }
+        if collect {
+             MCFileManager.collectProductToLocal(model: cate!)
+             self.collectBtn.setImage(UIImage(named: "collected"), for: .normal)
+        }
+       
     }
     @IBAction func gotoOrder(_ sender: Any) {
        self.orderNow()
@@ -131,6 +158,10 @@ class ProductViewController: MCRootViewController {
     }
     
     @objc func addshipCar()  {
+        if (AdminTool.share.user?.usercode) == nil {
+            self.present( MCNavegationController(rootViewController: LoginViewController()), animated: true, completion: nil)
+            return
+        }
         var array = [String]()
         for (_,value) in (model?.attribute)! {
             array = value
@@ -142,8 +173,26 @@ class ProductViewController: MCRootViewController {
             self!.cate?.attribute = attribute
             self!.cate?.buyCount = number
 //            self!.gotoOder()
-            let dic = ["userid","1001"]
-            RONetCenter.addcarRequest(dic: <#T##[String : String]#>)
+            var price1:Float = 0.00
+            var price2:Float = 0.00
+            
+            let numberstring =  self!.cate!.productPrice1
+            let numberString = numberstring.replacingOccurrences(of: "￥", with: "")
+            let countNum =  self!.cate!.buyCount ?? 1
+            price1 += Float(numberString)!*Float(countNum)
+            
+            let numberstring2 =  self!.cate!.productPrice2
+            let number2 = numberstring2.replacingOccurrences(of: "￥", with: "")
+            price2 += Float(number2)!*Float(countNum)
+            
+            let discount = "\(price2-price1)"
+            
+            let dic = ["userid":"1001","productdiscount":discount,"deviceid":((UIApplication.shared.delegate) as! AppDelegate).deviceid,"productpirce":numberString,"productattribute":attribute,"secretkey":AdminTool.share.user!.secretkey,"productcount":"\(number)","productname":self!.cate!.productName,"productimage":self!.cate!.productImage,"productid":self!.cate!.productId]
+            RONetCenter.addcarRequest(dic: dic).subscribe(onNext: { (data) in
+               HudTool.showflashMessage(message: "加入购物车成功")
+            }, onError: { (error) in
+                HudTool.showflashMessage(message: "加入失败，请稍后重试")
+            }, onCompleted: nil, onDisposed: nil).disposed(by: self!.disposeBag)
             //加入购物车
         }
         viewPurchase.snp.makeConstraints { (make) in
@@ -160,6 +209,7 @@ class ProductViewController: MCRootViewController {
         }, completion: nil)
     
     }
+    
     
     lazy var middleView: UIView = {
         let v = UIView(frame: CGRect(x: 0, y: 250, width: screenWith, height: 160))

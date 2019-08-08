@@ -21,6 +21,7 @@ class OrderSigleCell: UITableViewCell {
     @IBOutlet weak var imageHead: UIImageView!
     var product : Product?
     var countbock : (()->())?
+    var carmodel : CarGood?
     
     let subject = BehaviorRelay<String>(value: "1")
     let bag = DisposeBag()
@@ -54,21 +55,21 @@ class OrderSigleCell: UITableViewCell {
         imageHead.kf_loadimageWithUrlString(url: model.productImage)
     }
     
-    func configCar(model:Product)  {
-        attribitelab.textColor = viewLineColor
+    func configCar(model:CarGood)  {
+        attribitelab.textColor = viewBackColor
         attribitelab.backgroundColor = UIColor.clear
-        attribitelab.text = model.attribute
-        name.text = model.productName
-        price.text = model.productPrice1
-        number = model.buyCount ?? 1
-        product = model
-        name.text = product?.productName
-        imageHead.kf_loadimageWithUrlString(url: model.productImage)
+        attribitelab.text = model.goodAttribute
+        name.text = model.goodName
+        price.text = "￥\(model.goodPirce)"
+        number = model.goodCount
+        carmodel = model
+        imageHead.kf_loadimageWithUrlString(url: model.goodImg)
     }
     
     @IBAction func reduce(_ sender: Any) {
         number -= 1
         product?.buyCount = number
+        carmodel?.goodCount = number
         if (self.countbock != nil) {
             self.countbock!()
         }
@@ -77,6 +78,7 @@ class OrderSigleCell: UITableViewCell {
     @IBAction func add(_ sender: Any) {
          number += 1
          product?.buyCount = number
+         carmodel?.goodCount = number
         if (self.countbock != nil) {
             self.countbock!()
         }

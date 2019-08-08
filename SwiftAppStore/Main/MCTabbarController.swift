@@ -23,17 +23,25 @@ open class MCTabbarController: UITabBarController {
     }
     
     func setDefault() {
-        self.addChildController(controller: HomeVCViewController(), title: "推荐", selectedImage: "Recomand", nornalImage: "RecomandUN", tag: 1)
-         self.addChildController(controller: CateViewController(), title: "分类", selectedImage: "cate", nornalImage: "cateUN", tag: 1)
-         self.addChildController(controller: CarViewController(), title: "购物车", selectedImage: "car", nornalImage: "carUN", tag: 1)
-         self.addChildController(controller: HomeVCViewController(), title: "我的", selectedImage: "my", nornalImage: "myUN", tag: 1)
+        let home = HomeVCViewController()
+        home.hiddenNav = true
+        self.addChildController(controller: home, title: "推荐", selectedImage: "Recomand", nornalImage: "RecomandUN", tag: 1)
+        let cate = CateViewController()
+        cate.hiddenNav = true
+        self.addChildController(controller:cate , title: "分类", selectedImage: "cate", nornalImage: "cateUN", tag: 1)
+        let car = CarViewController()
+        car.hiddenNav = false
+        self.addChildController(controller: car, title: "购物车", selectedImage: "car", nornalImage: "carUN", tag: 1)
+        let my = MyViewController()
+        my.hiddenNav = true
+        self.addChildController(controller:my , title: "我的", selectedImage: "my", nornalImage: "myUN", tag: 1)
     }
     
     func addChildController(controller:MCRootViewController,title:String,selectedImage:String,nornalImage:String,tag:NSInteger) {
         controller.tabBarItem = self.setupTabBarItem(title: title, selectedImage: selectedImage, normalImage: nornalImage, tag: tag)
         let navigationCont = MCNavegationController(rootViewController: controller)
 //        navigationCont.navigationBar.setBackgroundImage(UIImage.init(), for: UIBarPosition.any, barMetrics: UIBarMetrics.default)
-          controller.hiddenNav = true;
+     //     controller.hiddenNav = true;
       //  navigationCont.navigationBar.shadowImage = UIImage.imageWithLineColor(color: UIColor.GetHexColor(rgbValue: 0xe5e5e5))
         self.addChild(navigationCont)
     }

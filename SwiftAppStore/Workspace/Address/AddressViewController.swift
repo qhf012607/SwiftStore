@@ -35,14 +35,22 @@ class AddressViewController: MCRootViewController,UITableViewDelegate,UITableVie
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(add))
         self.table.separatorStyle = .none
         self.title = "地址管理"
+      
     }
     
     override func viewWillAppear(_ animated: Bool) {
-       array = MCFileManager.readAddressData()
-        self.table.reloadData()
-        if array.count == 0 {
-            HudTool.showflashMessage(message: "暂无地址，去添加地址吧~")
+        HudTool.showLoadingAutoHiden()
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+0.5) {
+            self.array = MCFileManager.readAddressData()
+            self.table.reloadData()
+            if self.array.count == 0 {
+                self.addEmptyView()
+                HudTool.showflashMessage(message: "暂无地址，去添加地址吧~")
+            }else{
+                self.removeEmpty()
+            }
         }
+       
     }
     
     @objc func add()  {

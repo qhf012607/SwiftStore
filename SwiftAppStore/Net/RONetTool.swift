@@ -101,7 +101,12 @@ class RONetTool: NSObject {
                     }
                   
                 }else{
-                    observe.onError( NSError(domain: "错误", code: dic["code"] as! Int, userInfo: nil) as Error)
+                    if(dic["code"] as! Int == -99){
+                       
+                        NotificationCenter.default.post(name:  NSNotification.Name(rawValue: TokenInvalidNotification), object: self, userInfo: nil)
+                    }else{
+                        observe.onError( NSError(domain: "错误", code: dic["code"] as! Int, userInfo: nil) as Error)
+                    }
                 }
                 return Disposables.create()
             })

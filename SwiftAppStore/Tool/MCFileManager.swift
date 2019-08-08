@@ -10,13 +10,33 @@ import UIKit
 
 class MCFileManager: NSObject {
     
+    class func collectProductToLocal(model:Product){
+        MCFileManager.writeModelToPath(path: "products.plist", model: model)
+    }
+    
+    class func readcollectsProducts()->[Product]{
+       return MCFileManager.readArrayFromPath(path: "products.plist")
+    }
+    
+    class func collectDefaultArrayProduct(array:[Product]){
+        MCFileManager.resetArray(array: array, path: "products.plist")
+    }
+    
+    
+    
+    class func clearUserInfo(){
+        MCFileManager.resetArray(array: [User](), path: "User.plist")
+    }
+    
     class func saveDefaultArrayUser(array:[User]){
-        MCFileManager.resetAdressArray(array: array, path: "User.plist")
+        MCFileManager.resetArray(array: array, path: "User.plist")
     }
     
     class func readdefaultUserFile()  -> [User]{
        return MCFileManager.readArrayFromPath(path: "User.plist")
     }
+    
+    
     
     class func saveTodefaultAddressFile(model:AddressModel) {
         MCFileManager.writeModelToPath(path: "address.plist", model: model)
@@ -29,7 +49,7 @@ class MCFileManager: NSObject {
     }
     
     class func updateAddress(array:[AddressModel]){
-        MCFileManager.resetAdressArray(array: array, path: "address.plist")
+        MCFileManager.resetArray(array: array, path: "address.plist")
     }
     
     class func saveDefaultCoupon(model:Coupous){
@@ -41,7 +61,7 @@ class MCFileManager: NSObject {
     }
     
     class func saveDefaultArrayCoupon(array:[Coupous]){
-        MCFileManager.resetAdressArray(array: array, path: "coupons.plist")
+        MCFileManager.resetArray(array: array, path: "coupons.plist")
     }
     
     class func writeModelToPath<T>(path:String,model:T) where T:Codable{
@@ -85,13 +105,13 @@ class MCFileManager: NSObject {
     }
     //将数组存入plist
     
-    class func resetAdressArray<T>(array:[T],path:String) where T:Codable{
+    class func resetArray<T>(array:[T],path:String) where T:Codable{
         do {
             let docUrl = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
             
             let filePath = docUrl.appendingPathComponent(path)
             
-            let exist = FileManager.default.fileExists(atPath: filePath.absoluteString)
+            let exist = FileManager.default.fileExists(atPath: filePath.path)
             var addressArray = [T]()
             
             if exist {

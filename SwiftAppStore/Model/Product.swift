@@ -22,6 +22,7 @@ class Product : Codable{
     var hits : Int
     var productName : String
     var buyCount : Int?
+  
     
     var price1Num: String {
         let priceOne = productPrice1.replacingOccurrences(of: "￥", with: "")
