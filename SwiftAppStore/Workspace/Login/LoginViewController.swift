@@ -11,6 +11,8 @@ import UIKit
 class LoginViewController: MCRootViewController {
     @IBOutlet weak var registBtn: UIButton!
     
+    @IBOutlet weak var viewTwo: UIView!
+    @IBOutlet weak var viewOne: UIView!
     @IBOutlet weak var loginBtn: UIButton!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var telephone: UITextField!
@@ -22,10 +24,15 @@ class LoginViewController: MCRootViewController {
         image.layer.cornerRadius = 5
         // Do any additional setup after loading the view.
         self.title = "登录"
-        
+        viewTwo.layer.cornerRadius = 20
+        viewOne.layer.cornerRadius = 20
+        self.view.backgroundColor = UIColor.white
+         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancel))
     }
 
-
+    @objc func cancel()  {
+        self.dismiss(animated: true, completion: nil)
+    }
     @IBAction func registClick(_ sender: Any) {
         self.navigationController?.pushViewController(RegistViewController(), animated: true)
     }

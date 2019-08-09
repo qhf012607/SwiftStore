@@ -14,6 +14,8 @@
             <connections>
                 <outlet property="canceled" destination="2qE-o8-XkM" id="jOp-rj-WEN"/>
                 <outlet property="finished" destination="k1a-a5-Rdz" id="oIk-u1-i6n"/>
+                <outlet property="leftmas" destination="gCm-sw-ZhS" id="T83-U3-jQH"/>
+                <outlet property="sliderView" destination="9b8-n7-DyC" id="pbo-sA-BGj"/>
                 <outlet property="table" destination="Es6-8f-6hU" id="pqi-6i-18H"/>
                 <outlet property="vieahead" destination="a4W-fx-AJ0" id="8M5-RL-Dji"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -87,6 +89,13 @@
                                 <action selector="btnclick:" destination="-1" eventType="touchUpInside" id="NXf-W1-weH"/>
                             </connections>
                         </button>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9b8-n7-DyC">
+                            <rect key="frame" x="0.0" y="38" width="62.5" height="1"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="Zsq-p1-g5n"/>
+                            </constraints>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
@@ -94,9 +103,11 @@
                         <constraint firstItem="CUr-34-erI" firstAttribute="leading" secondItem="a4W-fx-AJ0" secondAttribute="leading" id="7Pa-qp-YCG"/>
                         <constraint firstItem="2qE-o8-XkM" firstAttribute="width" secondItem="CUr-34-erI" secondAttribute="width" id="7Sd-sL-a78"/>
                         <constraint firstItem="87X-4x-h2c" firstAttribute="width" secondItem="CUr-34-erI" secondAttribute="width" id="9II-Sh-RHf"/>
+                        <constraint firstItem="9b8-n7-DyC" firstAttribute="width" secondItem="CUr-34-erI" secondAttribute="width" id="9fv-Vy-6WX"/>
                         <constraint firstItem="2qE-o8-XkM" firstAttribute="top" secondItem="a4W-fx-AJ0" secondAttribute="top" id="9wK-pP-saB"/>
                         <constraint firstItem="djX-lT-qXl" firstAttribute="leading" secondItem="Ev5-8K-zEj" secondAttribute="trailing" id="GJI-mv-Vlg"/>
                         <constraint firstAttribute="bottom" secondItem="CUr-34-erI" secondAttribute="bottom" id="O0z-ae-AAZ"/>
+                        <constraint firstAttribute="bottom" secondItem="9b8-n7-DyC" secondAttribute="bottom" constant="1" id="PuE-dS-yuz"/>
                         <constraint firstItem="CUr-34-erI" firstAttribute="width" secondItem="a4W-fx-AJ0" secondAttribute="width" multiplier="1:6" id="QgQ-cn-8Ut"/>
                         <constraint firstAttribute="bottom" secondItem="2qE-o8-XkM" secondAttribute="bottom" id="Rqz-6l-OkJ"/>
                         <constraint firstItem="k1a-a5-Rdz" firstAttribute="leading" secondItem="djX-lT-qXl" secondAttribute="trailing" id="SVy-I4-b8N"/>
@@ -107,6 +118,7 @@
                         <constraint firstItem="Ev5-8K-zEj" firstAttribute="top" secondItem="a4W-fx-AJ0" secondAttribute="top" id="bmC-GG-BI7"/>
                         <constraint firstAttribute="bottom" secondItem="djX-lT-qXl" secondAttribute="bottom" id="cig-K3-Z6m"/>
                         <constraint firstItem="djX-lT-qXl" firstAttribute="width" secondItem="CUr-34-erI" secondAttribute="width" id="cuB-M5-db1"/>
+                        <constraint firstItem="9b8-n7-DyC" firstAttribute="leading" secondItem="a4W-fx-AJ0" secondAttribute="leading" id="gCm-sw-ZhS"/>
                         <constraint firstAttribute="bottom" secondItem="k1a-a5-Rdz" secondAttribute="bottom" id="jKe-3c-1Nc"/>
                         <constraint firstItem="k1a-a5-Rdz" firstAttribute="width" secondItem="CUr-34-erI" secondAttribute="width" id="jtM-EV-ETV"/>
                         <constraint firstItem="djX-lT-qXl" firstAttribute="top" secondItem="a4W-fx-AJ0" secondAttribute="top" id="l9W-Sg-95K"/>

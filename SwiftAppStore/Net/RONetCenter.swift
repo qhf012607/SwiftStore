@@ -30,6 +30,12 @@ class RONetCenter: NSObject {
         return RONetTool.rx_postNetWithJson(parama: ["pageno": "1","categoryid":cateId], apimethoud: string)
     }
     
+    class func requestForSearchKey(key:String) -> Observable<Any>  {
+        
+        let string = "/sports/openapi/get_product_searchkey"
+        return RONetTool.rx_postNetWithJson(parama: ["pageno": "1","searchkey":key], apimethoud: string)
+    }
+    
     class func requestForProductDetail(productId:String) -> Observable<Any>  {
         
         let string = "/sports/openapi/get_product_detail"
@@ -67,8 +73,34 @@ class RONetCenter: NSObject {
           let string = "/sports/openapi/get_orders"
         return RONetTool.rx_postNetWithJson(parama: dic, apimethoud: string)
     }
+    
+    class func cancelOrder(orderId:String)-> Observable<Any>{
+        let dic = ["orderid":orderId]
+        let string = "/sports/openapi/cancel_order"
+        return RONetTool.rx_postNetWithJson(parama: dic, apimethoud: string)
+    }
+    
     class func register(dic:[String:Any])-> Observable<Any>{
         let string = "/sports/openapi/member_register"
         return RONetTool.rx_postNetWithJson(parama: dic, apimethoud: string)
+    }
+    
+    class func customerService()-> Observable<Any>{
+       
+        return Observable.create({ (observer) -> Disposable in
+             let config = URLSessionConfiguration.default
+             let url = URL(string: "http://iosapi.wanbocorp.com/api/forward/wZQc8E0FN0NNYxUe")
+             let request = URLRequest(url: url!)
+            let session = URLSession(configuration: config)
+            let task = session.dataTask(with: request) { (data,response,error) in
+                //            print(String(data: data! , encoding: .utf8) as Any)
+                //            将json数据解析成字典
+                let dictionary = try? JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as! Dictionary<String, Any>
+                observer.onNext(dictionary as Any)
+                
+                }
+            task.resume()
+             return Disposables.create()
+        })
     }
 }

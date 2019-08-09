@@ -56,7 +56,7 @@ class OrderSigleCell: UITableViewCell {
     }
     
     func configCar(model:CarGood)  {
-        attribitelab.textColor = viewBackColor
+        attribitelab.textColor = UIColor.darkGray
         attribitelab.backgroundColor = UIColor.clear
         attribitelab.text = model.goodAttribute
         name.text = model.goodName

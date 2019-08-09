@@ -45,6 +45,7 @@
                                     <constraint firstAttribute="width" constant="70" id="dPd-IP-qt7"/>
                                     <constraint firstAttribute="height" constant="30" id="s79-YQ-L0V"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <state key="normal" title="取消订单">
                                     <color key="titleColor" red="1" green="0.070895302120000003" blue="0.098547098560000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>

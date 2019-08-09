@@ -89,7 +89,13 @@ class RONetTool: NSObject {
             let dic = data as! Dictionary<String, Any>
             print("\n \(responds) \n\n \(dic) jsonString\n")
             return Observable.create({ (observe) -> Disposable in
-                if(dic["code"] as! Int == 1){
+                var code = 0
+                if dic["code"] is String{
+                    code = Int(dic["code"] as! String)!
+                }else{
+                    code = dic["code"]  as! Int
+                }
+                if(code == 1){
                     if dic["data"] != nil{
                         if dic["data"] != nil{
                             observe.onNext(dic["data"]!)
@@ -101,11 +107,11 @@ class RONetTool: NSObject {
                     }
                   
                 }else{
-                    if(dic["code"] as! Int == -99){
+                    if(code == -99){
                        
                         NotificationCenter.default.post(name:  NSNotification.Name(rawValue: TokenInvalidNotification), object: self, userInfo: nil)
                     }else{
-                        observe.onError( NSError(domain: "错误", code: dic["code"] as! Int, userInfo: nil) as Error)
+                        observe.onError( NSError(domain: "错误", code: code, userInfo: nil) as Error)
                     }
                 }
                 return Disposables.create()

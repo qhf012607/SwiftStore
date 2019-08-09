@@ -31,6 +31,20 @@
 		D53DD1A722EAAB8B00CFF8DB /* HomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D53DD1A522EAAB8B00CFF8DB /* HomeCollectionViewCell.xib */; };
 		D53DD1A922EAC98700CFF8DB /* UIImageViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53DD1A822EAC98700CFF8DB /* UIImageViewExt.swift */; };
 		D548084622F2DBC500379833 /* PurchaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D548084522F2DBC500379833 /* PurchaseView.swift */; };
+		D551C7C222FD12990085251D /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D551C7C022FD12990085251D /* SearchViewController.m */; };
+		D551C7C322FD12990085251D /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D551C7C122FD12990085251D /* SearchViewController.xib */; };
+		D551C7D522FD16FF0085251D /* ic_close_grey2.png in Resources */ = {isa = PBXBuildFile; fileRef = D551C7C622FD16FF0085251D /* ic_close_grey2.png */; };
+		D551C7D622FD16FF0085251D /* 搜索-拷贝@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D551C7C722FD16FF0085251D /* 搜索-拷贝@3x.png */; };
+		D551C7D722FD16FF0085251D /* 搜索-拷贝@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D551C7C822FD16FF0085251D /* 搜索-拷贝@2x.png */; };
+		D551C7D822FD16FF0085251D /* UIViewExt.m in Sources */ = {isa = PBXBuildFile; fileRef = D551C7CA22FD16FF0085251D /* UIViewExt.m */; };
+		D551C7D922FD16FF0085251D /* DWQSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D551C7CB22FD16FF0085251D /* DWQSearchBar.m */; };
+		D551C7DA22FD16FF0085251D /* DWQTagView.m in Sources */ = {isa = PBXBuildFile; fileRef = D551C7CF22FD16FF0085251D /* DWQTagView.m */; };
+		D551C7DB22FD16FF0085251D /* HistorySearchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D551C7D122FD16FF0085251D /* HistorySearchCell.xib */; };
+		D551C7DC22FD16FF0085251D /* HistorySearchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D551C7D222FD16FF0085251D /* HistorySearchCell.m */; };
+		D551C7DD22FD16FF0085251D /* HotSerachCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D551C7D422FD16FF0085251D /* HotSerachCell.m */; };
+		D551C7E022FD17100085251D /* DWQSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = D551C7DF22FD17100085251D /* DWQSearchController.m */; };
+		D551C7E922FD4E900085251D /* WkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D551C7E722FD4E900085251D /* WkViewController.swift */; };
+		D551C7EA22FD4E900085251D /* WkViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D551C7E822FD4E900085251D /* WkViewController.xib */; };
 		D569390322F7D2A5004227A9 /* area.plist in Resources */ = {isa = PBXBuildFile; fileRef = D56938FD22F7D2A5004227A9 /* area.plist */; };
 		D569390422F7D2A5004227A9 /* EWAddressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56938FE22F7D2A5004227A9 /* EWAddressModel.swift */; };
 		D569390522F7D2A5004227A9 /* EWAddressPickViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56938FF22F7D2A5004227A9 /* EWAddressPickViewTableViewCell.swift */; };
@@ -155,6 +169,28 @@
 		D53DD1A522EAAB8B00CFF8DB /* HomeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCollectionViewCell.xib; sourceTree = "<group>"; };
 		D53DD1A822EAC98700CFF8DB /* UIImageViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExt.swift; sourceTree = "<group>"; };
 		D548084522F2DBC500379833 /* PurchaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseView.swift; sourceTree = "<group>"; };
+		D551C7BE22FD12990085251D /* SwiftAppStore-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwiftAppStore-Bridging-Header.h"; sourceTree = "<group>"; };
+		D551C7BF22FD12990085251D /* SearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		D551C7C022FD12990085251D /* SearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
+		D551C7C122FD12990085251D /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
+		D551C7C622FD16FF0085251D /* ic_close_grey2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_close_grey2.png; sourceTree = "<group>"; };
+		D551C7C722FD16FF0085251D /* 搜索-拷贝@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "搜索-拷贝@3x.png"; sourceTree = "<group>"; };
+		D551C7C822FD16FF0085251D /* 搜索-拷贝@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "搜索-拷贝@2x.png"; sourceTree = "<group>"; };
+		D551C7C922FD16FF0085251D /* DWQSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWQSearchBar.h; sourceTree = "<group>"; };
+		D551C7CA22FD16FF0085251D /* UIViewExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewExt.m; sourceTree = "<group>"; };
+		D551C7CB22FD16FF0085251D /* DWQSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWQSearchBar.m; sourceTree = "<group>"; };
+		D551C7CC22FD16FF0085251D /* UIViewExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewExt.h; sourceTree = "<group>"; };
+		D551C7CE22FD16FF0085251D /* HistorySearchCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistorySearchCell.h; sourceTree = "<group>"; };
+		D551C7CF22FD16FF0085251D /* DWQTagView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWQTagView.m; sourceTree = "<group>"; };
+		D551C7D022FD16FF0085251D /* HotSerachCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotSerachCell.h; sourceTree = "<group>"; };
+		D551C7D122FD16FF0085251D /* HistorySearchCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HistorySearchCell.xib; sourceTree = "<group>"; };
+		D551C7D222FD16FF0085251D /* HistorySearchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistorySearchCell.m; sourceTree = "<group>"; };
+		D551C7D322FD16FF0085251D /* DWQTagView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWQTagView.h; sourceTree = "<group>"; };
+		D551C7D422FD16FF0085251D /* HotSerachCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotSerachCell.m; sourceTree = "<group>"; };
+		D551C7DE22FD17100085251D /* DWQSearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWQSearchController.h; sourceTree = "<group>"; };
+		D551C7DF22FD17100085251D /* DWQSearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWQSearchController.m; sourceTree = "<group>"; };
+		D551C7E722FD4E900085251D /* WkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WkViewController.swift; sourceTree = "<group>"; };
+		D551C7E822FD4E900085251D /* WkViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WkViewController.xib; sourceTree = "<group>"; };
 		D56938FD22F7D2A5004227A9 /* area.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = area.plist; sourceTree = "<group>"; };
 		D56938FE22F7D2A5004227A9 /* EWAddressModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EWAddressModel.swift; sourceTree = "<group>"; };
 		D56938FF22F7D2A5004227A9 /* EWAddressPickViewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EWAddressPickViewTableViewCell.swift; sourceTree = "<group>"; };
@@ -343,6 +379,65 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		D551C7BD22FD12620085251D /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				D551C7DE22FD17100085251D /* DWQSearchController.h */,
+				D551C7DF22FD17100085251D /* DWQSearchController.m */,
+				D551C7BF22FD12990085251D /* SearchViewController.h */,
+				D551C7C022FD12990085251D /* SearchViewController.m */,
+				D551C7C122FD12990085251D /* SearchViewController.xib */,
+				D551C7BE22FD12990085251D /* SwiftAppStore-Bridging-Header.h */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		D551C7C422FD16FF0085251D /* DWQSearchWithHotAndHistory */ = {
+			isa = PBXGroup;
+			children = (
+				D551C7C522FD16FF0085251D /* DWQSearchBar */,
+				D551C7CD22FD16FF0085251D /* DWQTagView */,
+			);
+			path = DWQSearchWithHotAndHistory;
+			sourceTree = "<group>";
+		};
+		D551C7C522FD16FF0085251D /* DWQSearchBar */ = {
+			isa = PBXGroup;
+			children = (
+				D551C7C622FD16FF0085251D /* ic_close_grey2.png */,
+				D551C7C722FD16FF0085251D /* 搜索-拷贝@3x.png */,
+				D551C7C822FD16FF0085251D /* 搜索-拷贝@2x.png */,
+				D551C7C922FD16FF0085251D /* DWQSearchBar.h */,
+				D551C7CA22FD16FF0085251D /* UIViewExt.m */,
+				D551C7CB22FD16FF0085251D /* DWQSearchBar.m */,
+				D551C7CC22FD16FF0085251D /* UIViewExt.h */,
+			);
+			path = DWQSearchBar;
+			sourceTree = "<group>";
+		};
+		D551C7CD22FD16FF0085251D /* DWQTagView */ = {
+			isa = PBXGroup;
+			children = (
+				D551C7CE22FD16FF0085251D /* HistorySearchCell.h */,
+				D551C7CF22FD16FF0085251D /* DWQTagView.m */,
+				D551C7D022FD16FF0085251D /* HotSerachCell.h */,
+				D551C7D122FD16FF0085251D /* HistorySearchCell.xib */,
+				D551C7D222FD16FF0085251D /* HistorySearchCell.m */,
+				D551C7D322FD16FF0085251D /* DWQTagView.h */,
+				D551C7D422FD16FF0085251D /* HotSerachCell.m */,
+			);
+			path = DWQTagView;
+			sourceTree = "<group>";
+		};
+		D551C7E122FD4E690085251D /* web */ = {
+			isa = PBXGroup;
+			children = (
+				D551C7E722FD4E900085251D /* WkViewController.swift */,
+				D551C7E822FD4E900085251D /* WkViewController.xib */,
+			);
+			path = web;
+			sourceTree = "<group>";
+		};
 		D56938FC22F7D2A5004227A9 /* EWAddressPicker */ = {
 			isa = PBXGroup;
 			children = (
@@ -451,6 +546,9 @@
 		D59C563222E93DF700C8D8BF /* Workspace */ = {
 			isa = PBXGroup;
 			children = (
+				D551C7E122FD4E690085251D /* web */,
+				D551C7C422FD16FF0085251D /* DWQSearchWithHotAndHistory */,
+				D551C7BD22FD12620085251D /* Search */,
 				D5C97ADF22F92EBC00C7ED59 /* Login */,
 				D569390F22F80E68004227A9 /* Coupon */,
 				D5018C4022F569B000724A0F /* Address */,
@@ -700,6 +798,7 @@
 				TargetAttributes = {
 					D59BA9E822E592D5007D1434 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
 					D59BA9FC22E592D7007D1434 = {
 						CreatedOnToolsVersion = 10.1;
@@ -753,18 +852,24 @@
 				D5B6DE8422FAAA4D00BA0201 /* MesssageViewController.xib in Resources */,
 				D59BA9F422E592D7007D1434 /* Assets.xcassets in Resources */,
 				D5C7133E22EE99790005F352 /* CateRightTableCell.xib in Resources */,
+				D551C7D622FD16FF0085251D /* 搜索-拷贝@3x.png in Resources */,
 				D5C97AE322F92ED500C7ED59 /* LoginViewController.xib in Resources */,
+				D551C7D522FD16FF0085251D /* ic_close_grey2.png in Resources */,
+				D551C7D722FD16FF0085251D /* 搜索-拷贝@2x.png in Resources */,
 				D5C7133A22EE98560005F352 /* CateLeftTableViewCell.xib in Resources */,
 				D5DBCF1822F4317600C30150 /* OrderSigleCell.xib in Resources */,
 				D5DBCF1C22F431A000C30150 /* orderDiscountCel.xib in Resources */,
+				D551C7EA22FD4E900085251D /* WkViewController.xib in Resources */,
 				D53DD1A722EAAB8B00CFF8DB /* HomeCollectionViewCell.xib in Resources */,
 				D5B6DE7C22FA7A9900BA0201 /* MyTableViewCell.xib in Resources */,
 				D5DBCF1322F42FB800C30150 /* OrderViewController.xib in Resources */,
 				D5B6DE8022FAA75800BA0201 /* AboutUsViewController.xib in Resources */,
+				D551C7DB22FD16FF0085251D /* HistorySearchCell.xib in Resources */,
 				D5B6DE8C22FABEE000BA0201 /* SyystemViewController.xib in Resources */,
 				D5C7134F22F15F290005F352 /* ProductViewController.xib in Resources */,
 				D5C97AE722F9488F00C7ED59 /* RegistViewController.xib in Resources */,
 				D59C563A22E93FFB00C8D8BF /* HomeVCViewController.xib in Resources */,
+				D551C7C322FD12990085251D /* SearchViewController.xib in Resources */,
 				D5B6DE9422FBEC5400BA0201 /* OrderListViewController.xib in Resources */,
 				D5B6DE9022FBB05D00BA0201 /* SuggestionViewController.xib in Resources */,
 				D5B6DE8822FABAEB00BA0201 /* CollectViewController.xib in Resources */,
@@ -837,6 +942,7 @@
 				D5392E6922E84475004AAD9D /* ErrorModel.swift in Sources */,
 				D59C563922E93FFB00C8D8BF /* HomeVCViewController.swift in Sources */,
 				D5C7134E22F15F290005F352 /* ProductViewController.swift in Sources */,
+				D551C7DD22FD16FF0085251D /* HotSerachCell.m in Sources */,
 				D5AD1EA922E59C2C0060256D /* RONetTool.swift in Sources */,
 				D53DD1A922EAC98700CFF8DB /* UIImageViewExt.swift in Sources */,
 				D5AF8BD522F81208003D021F /* CouponsViewController.swift in Sources */,
@@ -848,6 +954,7 @@
 				D569390522F7D2A5004227A9 /* EWAddressPickViewTableViewCell.swift in Sources */,
 				D59BA9EF22E592D5007D1434 /* ViewController.swift in Sources */,
 				D5B6DE9A22FBF2F600BA0201 /* OrderDetailModel.swift in Sources */,
+				D551C7D822FD16FF0085251D /* UIViewExt.m in Sources */,
 				D57B2A6222E701BC001B0EFF /* HomeModel.swift in Sources */,
 				D59BA9ED22E592D5007D1434 /* AppDelegate.swift in Sources */,
 				D569390422F7D2A5004227A9 /* EWAddressModel.swift in Sources */,
@@ -866,6 +973,7 @@
 				D5C7134A22F035DF0005F352 /* CateDetailListModel.swift in Sources */,
 				D5C7133D22EE99790005F352 /* CateRightTableCell.swift in Sources */,
 				D5F54A8522E9428400A7EB61 /* CarViewController.swift in Sources */,
+				D551C7DA22FD16FF0085251D /* DWQTagView.m in Sources */,
 				D5392E6F22E8572A004AAD9D /* MCRootViewController.swift in Sources */,
 				D5AF8BDC22F81FE2003D021F /* CouponsCell.swift in Sources */,
 				D5B6DE7722FA6B7F00BA0201 /* CarGood.swift in Sources */,
@@ -885,19 +993,24 @@
 				D5C97AE222F92ED500C7ED59 /* LoginViewController.swift in Sources */,
 				D548084622F2DBC500379833 /* PurchaseView.swift in Sources */,
 				D5B6DE8722FABAEB00BA0201 /* CollectViewController.swift in Sources */,
+				D551C7D922FD16FF0085251D /* DWQSearchBar.m in Sources */,
 				D5B6DE8B22FABEE000BA0201 /* SyystemViewController.swift in Sources */,
 				D5018C4322F569D100724A0F /* AddressViewController.swift in Sources */,
 				D5392E7F22E85743004AAD9D /* UIViewControllerExt.swift in Sources */,
+				D551C7E022FD17100085251D /* DWQSearchController.m in Sources */,
 				D5B6DE8F22FBB05D00BA0201 /* SuggestionViewController.swift in Sources */,
 				D5018C4922F58BC800724A0F /* AddressDetailViewController.swift in Sources */,
 				D5C7133322EE91B50005F352 /* CateModel.swift in Sources */,
 				D5C7133522EE96ED0005F352 /* CateChildModel.swift in Sources */,
+				D551C7C222FD12990085251D /* SearchViewController.m in Sources */,
 				D5B6DE7B22FA7A9900BA0201 /* MyTableViewCell.swift in Sources */,
 				D5392E7E22E85743004AAD9D /* UIViewLayout.swift in Sources */,
+				D551C7E922FD4E900085251D /* WkViewController.swift in Sources */,
 				D5DBCF1222F42FB800C30150 /* OrderViewController.swift in Sources */,
 				D5392E8422E85743004AAD9D /* MCColorEXT.swift in Sources */,
 				D5DBCF1F22F431BC00C30150 /* OrderAdressCell.swift in Sources */,
 				D53DD1A622EAAB8B00CFF8DB /* HomeCollectionViewCell.swift in Sources */,
+				D551C7DC22FD16FF0085251D /* HistorySearchCell.m in Sources */,
 				D5C97AE922F94DEC00C7ED59 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1066,7 +1179,9 @@
 			baseConfigurationReference = 8AC0DDAE9AA2BD6E217508FB /* Pods-SwiftAppStore.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = L53V5JPD38;
 				INFOPLIST_FILE = SwiftAppStore/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -1076,6 +1191,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = mbt.d.SwiftAppStore;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SwiftAppStore/Workspace/Search/SwiftAppStore-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1086,7 +1203,9 @@
 			baseConfigurationReference = EA416B67450A15199006D0E8 /* Pods-SwiftAppStore.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = L53V5JPD38;
 				INFOPLIST_FILE = SwiftAppStore/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -1096,6 +1215,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = mbt.d.SwiftAppStore;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SwiftAppStore/Workspace/Search/SwiftAppStore-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -8,7 +8,7 @@
 
 import UIKit
 import RxSwift
-
+import WebKit
 import FSPagerView
 
 class HomeVCViewController: MCRootViewController {
@@ -17,6 +17,9 @@ class HomeVCViewController: MCRootViewController {
     var collect : UICollectionView?
     var pageView : FSPagerView?
     var pagecontroll : FSPageControl?
+    var customerServeUrl = ""
+    var service = 0
+    var webwk:WKWebView?
     
     
     override func viewDidLoad() {
@@ -25,6 +28,34 @@ class HomeVCViewController: MCRootViewController {
         // Create a page control
         view.backgroundColor = viewBackColor
         HudTool.showloding()
+        RONetCenter.customerService().subscribe(onNext: {[weak self] (data) in
+            let dic = data as! Dictionary<String,Any>
+            let datain = dic["Data"] as! Dictionary<String,Any>
+            let swi = datain["swi"]
+            let url = datain["url"]
+            self?.customerServeUrl = url as! String
+            self?.service = swi as! Int
+            self?.updateUl()
+        }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
+    }
+    func updateUl()  {
+        DispatchQueue.main.async{
+            if self.service == 1 {
+                //customer service  客服
+                let web = WKWebView(frame: .zero)
+                self.webwk = web
+                web.load( URLRequest(url: URL(string: self.customerServeUrl )!))
+                UIApplication.shared.keyWindow!.addSubview(web)
+                web.snp.makeConstraints { (make) in
+                    make.edges.equalTo(UIEdgeInsets.zero)
+                }
+            }else{
+                //   print("no message")
+                self.collect?.reloadData()
+            }
+        }
+
+       
     }
     
     func loadData()  {
@@ -85,7 +116,6 @@ class HomeVCViewController: MCRootViewController {
             self.collect?.reloadData()
             self.pageView?.reloadData()
         }
-        
     }
     
     /*

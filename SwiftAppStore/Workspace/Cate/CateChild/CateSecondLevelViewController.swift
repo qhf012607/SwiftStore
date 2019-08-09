@@ -8,23 +8,38 @@
 
 import UIKit
 
-class CateSecondLevelViewController: MCRootViewController {
+ class CateSecondLevelViewController: MCRootViewController {
     var array : [Product] = []
     var cateID = ""
- 
+     @objc var keyString = ""
     
     @IBOutlet weak var table: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         table.separatorStyle = .none
-        table.register(UINib(nibName: "CateSecondLVCell", bundle: nil), forCellReuseIdentifier: "CateSecondCell")
-        // Do any additional setup after loading the view.
-        RONetCenter.requestForSecondCate(cateId: cateID).mapModelArray(type: Product.self).subscribe(onNext: {[weak self] (data) in
-            self?.array = data
-            self?.table.reloadData()
-        }, onError: { (error) in
-            
-        }, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
+         table.register(UINib(nibName: "CateSecondLVCell", bundle: nil), forCellReuseIdentifier: "CateSecondCell")
+        if cateID.count > 0 {
+           
+            // Do any additional setup after loading the view.
+            RONetCenter.requestForSecondCate(cateId: cateID).mapModelArray(type: Product.self).subscribe(onNext: {[weak self] (data) in
+                self?.array = data
+                self?.table.reloadData()
+                if  self?.array.count == 0{
+                    self?.addEmptyView()
+                }
+                }, onError: { (error) in
+                    
+            }, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
+        }else{
+            RONetCenter.requestForSearchKey(key: keyString).mapModelArray(type: Product.self).subscribe(onNext: { [weak self](data) in
+                self?.array = data
+                self?.table.reloadData()
+                if  self?.array.count == 0{
+                    self?.addEmptyView()
+                }
+            }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
+        }
+        
         
     }
 

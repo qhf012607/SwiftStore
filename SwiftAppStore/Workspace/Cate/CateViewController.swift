@@ -69,7 +69,7 @@ class CateViewController: MCRootViewController {
 extension CateViewController:UISearchBarDelegate{
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         searchBar.endEditing(true)
-        let vc = CateSecondLevelViewController()
+        let vc = DWQSearchController()
         vc.hiddenNav = false
        self.navigationController?.pushViewController(vc, animated: true)
     }

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import RxSwift
 class OrderListTableViewCell: UITableViewCell {
 
     @IBOutlet weak var viewBack: UIView!
@@ -17,6 +17,9 @@ class OrderListTableViewCell: UITableViewCell {
     @IBOutlet weak var heightConst: NSLayoutConstraint!
     @IBOutlet weak var sigleListView: UIView!
     @IBOutlet weak var orderNo: UILabel!
+    var cancelBlock : (()->())?
+    var orderM : OrderDetailModel?
+    var disbosBag = DisposeBag()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,6 +28,7 @@ class OrderListTableViewCell: UITableViewCell {
         viewBack.layer.cornerRadius = 5
         self.backgroundColor = viewBackColor
         cancelBtn.layer.cornerRadius = 15
+        cancelBtn.addTarget(self, action: #selector(cancelClick(sender:)), for: .touchUpInside)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -33,8 +37,9 @@ class OrderListTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func configCell(order:OrderDetailModel,stateDis:String)  {
-        if stateDis == "0" || stateDis == "1" {
+    func configCell(order:OrderDetailModel,stateDis:Int)  {
+        orderM = order
+        if order .state == 1{
             cancelBtn.isHidden = false
         }else{
             cancelBtn.isHidden = true
@@ -85,4 +90,16 @@ class OrderListTableViewCell: UITableViewCell {
         }
     }
     
+    @objc func cancelClick(sender:UIButton)  {
+        HudTool.showloding()
+        RONetCenter.cancelOrder(orderId: (orderM?.orderId)!).subscribe(onNext: { [weak self](data) in
+            HudTool.hiddloading()
+            if self!.cancelBlock != nil {
+                self!.cancelBlock!()
+            }
+        }, onError: { (eror) in
+             HudTool.hiddloading()
+        }, onCompleted: nil, onDisposed: nil).disposed(by: disbosBag)
+        
+    }
 }

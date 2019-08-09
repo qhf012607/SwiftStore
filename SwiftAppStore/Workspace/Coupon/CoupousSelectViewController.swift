@@ -17,6 +17,7 @@ class CoupousSelectViewController: MCRootViewController,UITableViewDelegate,UITa
     override func viewDidLoad() {
         super.viewDidLoad()
         let arrayAll = MCFileManager.readDefaultCoupon()
+        self.title = "我的卡券"
         for coupou in arrayAll {
             if coupou.alreadGet{
                 array.append(coupou)

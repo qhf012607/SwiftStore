@@ -23,6 +23,7 @@ class SyystemViewController: MCRootViewController {
     }
 
     @IBAction func loginOut(_ sender: Any) {
+         MCFileManager.clearUserInfo()
         self.present( MCNavegationController(rootViewController: LoginViewController()), animated: true, completion: nil)
     }
     

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Product : Codable{
+class Product :NSObject,Codable{
     var sales : Float
     var productPrice1 : String
     var productCategoryid : String
@@ -31,5 +31,9 @@ class Product : Codable{
         return priceOne
     }
     var attribute :String?
+    
+//    override init(){
+//
+//    }
     
 }

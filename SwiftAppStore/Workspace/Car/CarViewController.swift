@@ -11,6 +11,7 @@ import UIKit
 class CarViewController: MCRootViewController {
     var array = [CarGood]()
     
+    @IBOutlet weak var carBtn: UIButton!
     @IBOutlet weak var carLab: UILabel!
     @IBOutlet weak var table: UITableView!
     override func viewDidLoad() {
@@ -19,8 +20,44 @@ class CarViewController: MCRootViewController {
         self.title = "购物车"
         table.separatorStyle = .none
         table.backgroundColor = viewBackColor
+        carBtn.layer.cornerRadius = 10
+        HudTool.showloding()
     }
     
+    @IBAction func order(_ sender: Any) {
+        var arrayNew = [Product]()
+        
+        var dic = [String:Any]()
+        for goode in array {
+            dic["productId"] = goode.goodId
+            dic["attribute"] = goode.goodAttribute
+            dic["productCategoryid"] = ""
+            dic["isFavorite"] = 0
+            dic["productImage"] = goode.goodImg
+            dic["collection"] = 0
+            dic["productPrice2"] = ""
+            dic["sequence"] = 0
+            dic["productStatus"] = 0
+            dic["hits"] = 0
+            dic["productName"] = goode.goodName
+            dic["buyCount"] = goode.goodCount
+            dic["sales"] = 0.0
+            dic["productPrice1"] = "\(goode.goodPirce)"
+            dic["productPrice2"] = "\(goode.goodPirce+goode.discount)"
+            do {
+                let data = try JSONSerialization.data(withJSONObject: dic, options: [])
+                let decoder = JSONDecoder()
+                let product =  try decoder.decode(Product.self, from: data)
+                arrayNew.append(product)
+            }catch {
+                print(error)
+            }
+         //   mode
+        }
+        let cont = OrderViewController()
+        cont.array = arrayNew
+        self.navigationController?.pushViewController(cont, animated: true)
+    }
     override func viewWillAppear(_ animated: Bool) {
         if AdminTool.share.user == nil {
             self.present( MCNavegationController(rootViewController: LoginViewController()), animated: true, completion: nil)
@@ -32,6 +69,7 @@ class CarViewController: MCRootViewController {
     func requestForgood()  {
         let dic = ["userid":"1001","deviceid":((UIApplication.shared.delegate) as! AppDelegate).deviceid,"pageno":"1","secretkey":AdminTool.share.user!.secretkey]
         RONetCenter.getCarList(dic: dic).mapModelArray(type: CarGood.self).subscribe(onNext: { [weak self](cargoods) in
+            HudTool.hiddloading()
             self!.array = cargoods
             if self!.array.count == 0{
                 self!.addEmptyView()
@@ -41,7 +79,7 @@ class CarViewController: MCRootViewController {
             self?.count()
             self!.table.reloadData()
             }, onError: { (error) in
-                
+                 HudTool.hiddloading()
         }, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
     }
     func count()  {

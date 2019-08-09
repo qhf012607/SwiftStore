@@ -15,6 +15,7 @@ class MyTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        self.selectionStyle = .none
     }
     
     func config(dic:[String:String])  {

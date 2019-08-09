@@ -10,6 +10,8 @@ import UIKit
 
 class OrderListViewController: MCRootViewController ,UITableViewDelegate,UITableViewDataSource{
     
+    @IBOutlet weak var leftmas: NSLayoutConstraint!
+    @IBOutlet weak var sliderView: UIView!
     
     @IBOutlet weak var vieahead: UIView!
     var tag = 0
@@ -31,23 +33,7 @@ class OrderListViewController: MCRootViewController ,UITableViewDelegate,UITable
         self.table.register(UINib(nibName: "OrderListTableViewCell", bundle: nil), forCellReuseIdentifier: "orderlist")
         request(state: tag)
         changeBtnColor(tag: tag)
-        switch tag {
-        case 0:
-            
-            break
-        case 1:
-            break
-        case 2:
-            break
-        case 3:
-            break
-        case 4:
-            break
-        case 5:
-            break
-        default:
-            break
-        }
+        sliderView.backgroundColor = UIColor.GetRGBColor(R: 48, G: 156, B: 227)
     }
 
     func changeBtnColor(tag:Int) {
@@ -55,8 +41,8 @@ class OrderListViewController: MCRootViewController ,UITableViewDelegate,UITable
             let btn = arrayBTn[index]
             btn.setTitleColor(UIColor.darkText, for: .normal)
             if tag == index{
-               
-                btn.setTitleColor(UIColor.blue, for: .normal)
+                btn.setTitleColor( UIColor.GetRGBColor(R: 48, G: 156, B: 227), for: .normal)
+                leftmas.constant = screenWith * CGFloat(index)/CGFloat(6 )
             }
         }
     }
@@ -97,7 +83,10 @@ class OrderListViewController: MCRootViewController ,UITableViewDelegate,UITable
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "orderlist") as! OrderListTableViewCell
         let model = self.array[indexPath.row]
-        cell.configCell(order: model, stateDis: "h")
+        cell.configCell(order: model, stateDis: tag)
+        cell.cancelBlock = {[weak self] in
+            self!.request(state: self!.tag)
+        }
         return cell
     }
     

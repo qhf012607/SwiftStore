@@ -14,10 +14,10 @@ class AddressDetailViewController: UIViewController {
     @IBOutlet weak var tel: UITextField!
     @IBOutlet weak var selectView: UIView!
     @IBOutlet weak var addressDetail: UITextView!
-    @IBOutlet weak var area: UITextField!
     @IBOutlet weak var buttonSelect: UIButton!
     var boolDefalt = true
     
+    @IBOutlet weak var areaLab: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         let gester = UITapGestureRecognizer(target: self, action: #selector(selectViewClick))
@@ -48,7 +48,7 @@ class AddressDetailViewController: UIViewController {
          */
         // 返回选择数据,地址,省,市,区
         addressPicker.backLocationStringController = { [weak self](address,province,city,area) in
-            self!.area.text = address
+            self!.areaLab.text = address
         }
         self.present(addressPicker, animated: true, completion: nil)
     }
@@ -56,14 +56,18 @@ class AddressDetailViewController: UIViewController {
     
     
     @objc func save()  {
-        if name.text?.count == 0 || tel.text?.count == 0 || addressDetail.text?.count == 0 || area.text?.count == 0 || name.text?.count == 0{
+        if name.text?.count == 0 || tel.text?.count == 0 || addressDetail.text?.count == 0 || areaLab.text?.count == 0 || name.text?.count == 0{
             HudTool.showflashMessage(message: "请填满所有信息")
+            return
+        }
+        if (tel.text?.count)! < 11 {
+            HudTool.showflashMessage(message: "请填写11位正确手机号")
             return
         }
         HudTool.showLoadingAutoHiden()
         let model = AddressModel()
         model.name = self.name.text!
-        model.address = self.area.text! + self.addressDetail.text!
+        model.address = self.areaLab.text! + self.addressDetail.text!
         model.tele = self.tel.text!
         var array = MCFileManager.readAddressData()
         array.insert(model, at: 0)

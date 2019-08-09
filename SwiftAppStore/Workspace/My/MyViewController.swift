@@ -24,6 +24,7 @@ class MyViewController: MCRootViewController {
             self.present( MCNavegationController(rootViewController: LoginViewController()), animated: true, completion: nil)
         }
         
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -47,7 +48,7 @@ class MyViewController: MCRootViewController {
         headview.addSubview(labName)
         
         let labeV =  UILabel(frame: CGRect(x: 0, y: 145, width: screenWith, height: 15))
-        labeV.text = "———————    会员中心    ———————"
+        labeV.text = "——————    会员中心    ——————"
         labeV.textAlignment = .center
         headview.addSubview(labeV)
         let spaceX = (screenWith - 160)/5

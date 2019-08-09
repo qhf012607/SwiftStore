@@ -87,7 +87,7 @@ class OrderViewController: MCRootViewController,MCaddressSelected {
         }
         var arrayGoode = [[String:String]]()
         for goode in array {
-            let dic = ["good_pirce":goode.price1Num,"good_discount":"0.00","good_attribute":goode.attribute ?? "","good_id":goode.productId,"good_img":goode.productImage,"good_name":goode.productName,"good_count":"\(goode.buyCount!)"]
+            let dic = ["good_pirce":goode.price1Num,"good_discount":"0.00","good_attribute":goode.attribute ?? "","good_id":goode.productId,"good_img":goode.productImage,"good_name":goode.productName,"good_count":"\(goode.buyCount)"]
             arrayGoode.append(dic )
         }
             let dicAll = ["details":arrayGoode,"consignee":AdminTool.share.user?.username ?? "","totaldiscount":"0","createuser":AdminTool.share.user?.usercode ?? "","totalprice":modelDiscount.sholdpayNum,"delivery_address":addressmodel!.address,"consignee_phone":AdminTool.share.user?.usercode ?? ""] as [String : Any]
@@ -112,7 +112,7 @@ extension OrderViewController:UITableViewDelegate,UITableViewDataSource{
         return 3
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 && section == 1 {
+        if section == 0 || section == 2 {
             return 1
         }else{
             return array.count
