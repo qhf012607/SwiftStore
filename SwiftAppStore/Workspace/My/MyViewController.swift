@@ -20,15 +20,18 @@ class MyViewController: MCRootViewController {
         self.table.separatorStyle = .none
         self.table.register(UINib(nibName: "MyTableViewCell", bundle: nil), forCellReuseIdentifier: "mytableCell")
         self.table.tableHeaderView = self.headview
+        
         if AdminTool.share.user == nil {
             self.present( MCNavegationController(rootViewController: LoginViewController()), animated: true, completion: nil)
         }
-        
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.configHead()
+    }
+    override func viewDidAppear(_ animated: Bool) {
+       
     }
     
     func configHead() {
@@ -74,6 +77,10 @@ class MyViewController: MCRootViewController {
     }
     
     @objc func gotoOrlderList(sender:UIButton)  {
+        if AdminTool.share.user == nil {
+            self.present( MCNavegationController(rootViewController: LoginViewController()), animated: true, completion: nil)
+            return
+        }
         let cont = OrderListViewController()
         cont.tag = sender.tag
         self.navigationController?.pushViewController(cont, animated: true)
@@ -92,23 +99,48 @@ extension MyViewController:UITableViewDelegate,UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         switch indexPath.row {
         case 0:   //地址
+            if AdminTool.share.user == nil {
+                self.present( MCNavegationController(rootViewController: LoginViewController()), animated: true, completion: nil)
+                return
+            }
             self.navigationController?.pushViewController(AddressViewController(), animated: true)
             break
         case 1:    //收藏
+            if AdminTool.share.user == nil {
+                self.present( MCNavegationController(rootViewController: LoginViewController()), animated: true, completion: nil)
+                return
+            }
              self.navigationController?.pushViewController(CollectViewController(), animated: true)
             break
         case 2:   //卡券
+            if AdminTool.share.user == nil {
+                self.present( MCNavegationController(rootViewController: LoginViewController()), animated: true, completion: nil)
+                return
+            }
              self.navigationController?.pushViewController(CoupousSelectViewController(), animated: true)
             break
         case 3:     //帮助
+            if AdminTool.share.user == nil {
+                self.present( MCNavegationController(rootViewController: LoginViewController()), animated: true, completion: nil)
+                return
+            }
              self.navigationController?.pushViewController(AboutUsViewController(), animated: true)
             break
         case 4:   //消息
+            if AdminTool.share.user == nil {
+                self.present( MCNavegationController(rootViewController: LoginViewController()), animated: true, completion: nil)
+                return
+            }
              self.navigationController?.pushViewController(MesssageViewController(), animated: true)
             break
         case 5:   //建议
+            if AdminTool.share.user == nil {
+                self.present( MCNavegationController(rootViewController: LoginViewController()), animated: true, completion: nil)
+                return
+            }
              self.navigationController?.pushViewController(SuggestionViewController(), animated: true)
             break
         case 6:   //设置

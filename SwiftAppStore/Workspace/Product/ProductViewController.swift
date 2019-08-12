@@ -124,29 +124,39 @@ class ProductViewController: MCRootViewController {
     */
    func orderNow()  {
         var array = [String]()
-        for (_,value) in (model?.attribute)! {
-            array = value
+        if model!.attribute != nil {
+            for (_,value) in (model?.attribute)! {
+                array = value
+            }
         }
-        viewPurchase = PurchaseView()
-        UIApplication.shared.delegate!.window!!.addSubview(viewPurchase)
-        self.viewPurchase.reloadTable(array: array) {[weak self] (index,number) in
+    
+        if array.count > 0 {
+            viewPurchase = PurchaseView()
+            UIApplication.shared.delegate!.window!!.addSubview(viewPurchase)
+            self.viewPurchase.reloadTable(array: array) {[weak self] (index,number) in
             let attribute = array[index]
             self!.cate?.attribute = attribute
             self!.cate?.buyCount = number
             self!.gotoOder()
         }
-        viewPurchase.snp.makeConstraints { (make) in
-            make.left.right.equalTo(0)
-            make.top.equalTo(screenHeight)
-            make.height.equalTo(screenHeight)
+            viewPurchase.snp.makeConstraints { (make) in
+                make.left.right.equalTo(0)
+                make.top.equalTo(screenHeight)
+                make.height.equalTo(screenHeight)
+            }
+            UIView.animate(withDuration: 1.5, animations: {
+                
+                self.viewPurchase.snp.updateConstraints({ (make) in
+                    make.top.equalTo(0)
+                })
+                UIApplication.shared.delegate!.window!!.setNeedsDisplay()
+            }, completion: nil)
+        }else{
+            self.gotoOder()
         }
-        UIView.animate(withDuration: 1.5, animations: {
-            
-            self.viewPurchase.snp.updateConstraints({ (make) in
-                make.top.equalTo(0)
-            })
-            UIApplication.shared.delegate!.window!!.setNeedsDisplay()
-        }, completion: nil)
+    
+    
+    
         
     }
     func gotoOder() {
@@ -163,50 +173,79 @@ class ProductViewController: MCRootViewController {
             return
         }
         var array = [String]()
-        for (_,value) in (model?.attribute)! {
-            array = value
-        }
-        viewPurchase = PurchaseView()
-        UIApplication.shared.delegate!.window!!.addSubview(viewPurchase)
-        self.viewPurchase.reloadTable(array: array) {[weak self] (index,number) in
-            let attribute = array[index]
-            self!.cate?.attribute = attribute
-            self!.cate?.buyCount = number
-//            self!.gotoOder()
+        if model?.attribute != nil {
+            for (_,value) in (model?.attribute)! {
+                array = value
+            }
+            viewPurchase = PurchaseView()
+            UIApplication.shared.delegate!.window!!.addSubview(viewPurchase)
+            self.viewPurchase.reloadTable(array: array) {[weak self] (index,number) in
+                let attribute = array[index]
+                self!.cate?.attribute = attribute
+                self!.cate?.buyCount = number
+                //            self!.gotoOder()
+                var price1:Float = 0.00
+                var price2:Float = 0.00
+                
+                let numberstring =  self!.cate!.productPrice1
+                let numberString = numberstring.replacingOccurrences(of: "￥", with: "")
+                let countNum =  self!.cate!.buyCount ?? 1
+                price1 += Float(numberString)!*Float(countNum)
+                
+                let numberstring2 =  self!.cate!.productPrice2
+                let number2 = numberstring2.replacingOccurrences(of: "￥", with: "")
+                price2 += Float(number2)!*Float(countNum)
+                
+                let discount = "\(price2-price1)"
+                
+                let dic = ["userid":"1001","productdiscount":discount,"deviceid":((UIApplication.shared.delegate) as! AppDelegate).deviceid,"productpirce":numberString,"productattribute":attribute,"secretkey":AdminTool.share.user!.secretkey,"productcount":"\(number)","productname":self!.cate!.productName,"productimage":self!.cate!.productImage,"productid":self!.cate!.productId]
+                RONetCenter.addcarRequest(dic: dic).subscribe(onNext: { (data) in
+                    HudTool.showflashMessage(message: "加入购物车成功")
+                }, onError: { (error) in
+                    HudTool.showflashMessage(message: "加入失败，请稍后重试")
+                }, onCompleted: nil, onDisposed: nil).disposed(by: self!.disposeBag)
+                //加入购物车
+            }
+            viewPurchase.snp.makeConstraints { (make) in
+                make.left.right.equalTo(0)
+                make.top.equalTo(screenHeight)
+                make.height.equalTo(screenHeight)
+            }
+            UIView.animate(withDuration: 1.5, animations: {
+                
+                self.viewPurchase.snp.updateConstraints({ (make) in
+                    make.top.equalTo(0)
+                })
+                UIApplication.shared.delegate!.window!!.setNeedsDisplay()
+            }, completion: nil)
+        }else{
+            self.cate!.buyCount = 1
+            //            self!.gotoOder()
             var price1:Float = 0.00
             var price2:Float = 0.00
             
-            let numberstring =  self!.cate!.productPrice1
+            let numberstring =  self.cate!.productPrice1
             let numberString = numberstring.replacingOccurrences(of: "￥", with: "")
-            let countNum =  self!.cate!.buyCount ?? 1
+            let countNum =  self.cate!.buyCount ?? 1
             price1 += Float(numberString)!*Float(countNum)
             
-            let numberstring2 =  self!.cate!.productPrice2
+            let numberstring2 =  self.cate!.productPrice2
             let number2 = numberstring2.replacingOccurrences(of: "￥", with: "")
             price2 += Float(number2)!*Float(countNum)
             
             let discount = "\(price2-price1)"
             
-            let dic = ["userid":"1001","productdiscount":discount,"deviceid":((UIApplication.shared.delegate) as! AppDelegate).deviceid,"productpirce":numberString,"productattribute":attribute,"secretkey":AdminTool.share.user!.secretkey,"productcount":"\(number)","productname":self!.cate!.productName,"productimage":self!.cate!.productImage,"productid":self!.cate!.productId]
+            let dic = ["userid":"1001","productdiscount":discount,"deviceid":((UIApplication.shared.delegate) as! AppDelegate).deviceid,"productpirce":numberString,"productattribute":"","secretkey":AdminTool.share.user!.secretkey,"productcount":"1","productname":self.cate!.productName,"productimage":self.cate!.productImage,"productid":self.cate!.productId]
             RONetCenter.addcarRequest(dic: dic).subscribe(onNext: { (data) in
-               HudTool.showflashMessage(message: "加入购物车成功")
+                HudTool.showflashMessage(message: "加入购物车成功")
             }, onError: { (error) in
                 HudTool.showflashMessage(message: "加入失败，请稍后重试")
-            }, onCompleted: nil, onDisposed: nil).disposed(by: self!.disposeBag)
+            }, onCompleted: nil, onDisposed: nil).disposed(by: self.disposeBag)
             //加入购物车
-        }
-        viewPurchase.snp.makeConstraints { (make) in
-            make.left.right.equalTo(0)
-            make.top.equalTo(screenHeight)
-            make.height.equalTo(screenHeight)
-        }
-        UIView.animate(withDuration: 1.5, animations: {
             
-            self.viewPurchase.snp.updateConstraints({ (make) in
-                make.top.equalTo(0)
-            })
-             UIApplication.shared.delegate!.window!!.setNeedsDisplay()
-        }, completion: nil)
+        }
+       
+       
     
     }
     

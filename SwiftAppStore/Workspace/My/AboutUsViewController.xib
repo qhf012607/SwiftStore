@@ -28,7 +28,7 @@
                         <constraint firstAttribute="width" constant="120" id="aJ1-xs-dHi"/>
                     </constraints>
                 </imageView>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="  万博体育是一个购买体育用品的商业平台，为用户提供一个开放、轻松、自由的购物环境。为打造一个线上下单、线下配送的综合性平台不断努力！" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="H1d-d6-Gpr">
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="  万博站是一个购买体育用品的商业平台，为用户提供一个开放、轻松、自由的购物环境。为打造一个线上下单、线下配送的综合性平台不断努力！" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="H1d-d6-Gpr">
                     <rect key="frame" x="10" y="320" width="355" height="337"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>

@@ -42,7 +42,10 @@ class LoginViewController: MCRootViewController {
           
             self!.dismiss(animated: true, completion: nil)
         }, onError: { (eror) in
-            
+            let error = eror as NSError
+            if error.code == 0 {
+            HudTool.showflashMessage(message: "账号不存在或密码错误")
+            }
         }, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
     }
     /*

@@ -127,12 +127,19 @@ class HomeVCViewController: MCRootViewController {
      // Pass the selected object to the new view controller.
      }
      */
-    func goVip()  {
-        
+   @objc func goVip()  {
+    
+        let cont = CateSecondLevelViewController()
+         cont.cateID = "41"
+       self.navigationController?.pushViewController(cont, animated: true)
     }
     
-    func goDiscount()  {
-        
+    @objc func goDiscount()  {
+        if AdminTool.share.user == nil {
+            self.present( MCNavegationController(rootViewController: LoginViewController()), animated: true, completion: nil)
+            return
+        }
+         self.navigationController?.pushViewController(CouponsViewController(), animated: true)
     }
     
     lazy var headButonView: UIView = {
@@ -142,6 +149,7 @@ class HomeVCViewController: MCRootViewController {
         button.layer.cornerRadius = 40
         button.setImage(UIImage(named: "discount"), for: .normal)
         view.addSubview(button)
+        button.addTarget(self, action: #selector(goDiscount), for: .touchUpInside)
         let lab = UILabel(frame: CGRect(x: 0, y: 50, width: 60, height: 20))
         lab.text = "领券中心"
         lab.textAlignment = .center
@@ -152,6 +160,7 @@ class HomeVCViewController: MCRootViewController {
         buttonvip.layer.cornerRadius = 40
         buttonvip.setImage(UIImage(named: "vip"), for: .normal)
         view.addSubview(buttonvip)
+        buttonvip.addTarget(self, action: #selector(goVip), for: .touchUpInside)
         let labvip = UILabel(frame: CGRect(x: 60, y: 50, width: 60, height: 20))
         labvip.text = "会员专享"
         view.addSubview(labvip)

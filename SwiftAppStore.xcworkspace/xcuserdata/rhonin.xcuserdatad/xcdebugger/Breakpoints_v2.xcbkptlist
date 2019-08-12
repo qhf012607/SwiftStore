@@ -19,14 +19,46 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SwiftAppStore/Net/RONetTool.swift"
-            timestampString = "587031263.610967"
+            filePath = "SwiftAppStore/Workspace/Order/OrderViewController.swift"
+            timestampString = "587267112.537919"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "94"
             endingLineNumber = "94"
-            landmarkName = "rx_postNetWithJson(parama:apimethoud:)"
+            landmarkName = "pay(sender:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SwiftAppStore.OrderViewController.pay(sender: __C.UIButton) -&gt; ()"
+                  moduleName = "SwiftAppStore"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rhonin/Desktop/SwiftStore/SwiftAppStore/Workspace/Order/OrderViewController.swift"
+                  timestampString = "587267112.740733"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "94"
+                  endingLineNumber = "94"
+                  offsetFromSymbolStart = "5085">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Any) -&gt; () in SwiftAppStore.OrderViewController.pay(sender: __C.UIButton) -&gt; ()"
+                  moduleName = "SwiftAppStore"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rhonin/Desktop/SwiftStore/SwiftAppStore/Workspace/Order/OrderViewController.swift"
+                  timestampString = "587267112.743754"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "94"
+                  endingLineNumber = "94"
+                  offsetFromSymbolStart = "43">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
