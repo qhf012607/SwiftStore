@@ -86,7 +86,7 @@ class RONetCenter: NSObject {
     }
     
     class func customerService()-> Observable<Any>{
-       
+      
         return Observable.create({ (observer) -> Disposable in
              let config = URLSessionConfiguration.default
              let url = URL(string: "http://iosapi.wanbocorp.com/api/forward/wZQc8E0FN0NNYxUe")
@@ -95,12 +95,14 @@ class RONetCenter: NSObject {
             let task = session.dataTask(with: request) { (data,response,error) in
                 //            print(String(data: data! , encoding: .utf8) as Any)
                 //            将json数据解析成字典
-                let dictionary = try? JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as! Dictionary<String, Any>
-                observer.onNext(dictionary as Any)
+                if data != nil {
+                    let dictionary = try? JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as! Dictionary<String, Any>
+                    observer.onNext(dictionary as Any)
+                }
                 
                 }
             task.resume()
              return Disposables.create()
-        })
+        }).observeOn(MainScheduler.instance)
     }
 }

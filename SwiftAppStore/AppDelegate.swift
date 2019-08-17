@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window!.makeKeyAndVisible()
         self.initMainView()
-        deviceid = (UIDevice.current.identifierForVendor?.uuidString)!
+        deviceid = UIDevice.current.identifierForVendor?.uuidString ?? ""
         return true
     }
     

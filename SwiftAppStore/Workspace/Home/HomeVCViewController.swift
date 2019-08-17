@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import WebKit
 import FSPagerView
-
+import Alamofire
 class HomeVCViewController: MCRootViewController {
     var arrayData = [Product]()
     let arrayHead = ["footBal","basKet","tenis"]
@@ -24,19 +24,35 @@ class HomeVCViewController: MCRootViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.loadData()
+       
         // Create a page control
         view.backgroundColor = viewBackColor
-        HudTool.showloding()
-        RONetCenter.customerService().subscribe(onNext: {[weak self] (data) in
-            let dic = data as! Dictionary<String,Any>
-            let datain = dic["Data"] as! Dictionary<String,Any>
-            let swi = datain["swi"]
-            let url = datain["url"]
-            self?.customerServeUrl = url as! String
-            self?.service = swi as! Int
-            self?.updateUl()
-        }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
+     //   HudTool.showloding()
+        let bool = NetworkReachabilityManager()
+        if bool?.isReachable ?? false {
+            self.loadData()
+            RONetCenter.customerService().subscribe(onNext: {[weak self] (data) in
+                let dic = data as! Dictionary<String,Any>
+                if dic["swi"] != nil {
+                let datain = dic["Data"] as! Dictionary<String,Any>
+                let swi = datain["swi"]
+                let url = datain["url"]
+                self?.customerServeUrl = url as! String
+                self?.service = swi as! Int
+                self?.updateUl()
+                }
+                }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
+        }else{
+            self.showReloadButon {[weak self] in
+                self?.loadData()
+            }
+            let alert = UIAlertController(title: "", message: "当前网络不可用，请检查网络后重试", preferredStyle: .alert)
+            let act = UIAlertAction(title: "确定", style: .cancel, handler: nil)
+            alert.addAction(act)
+            self.present(alert, animated: true, completion: nil)
+            
+        }
+       
     }
     func updateUl()  {
         DispatchQueue.main.async{
@@ -60,11 +76,11 @@ class HomeVCViewController: MCRootViewController {
     
     func loadData()  {
         RONetCenter.requestForHome().mapModelArray(type: Product.self).subscribe(onNext: { [weak self] (data) in
-            HudTool.hiddloading()
+        //    HudTool.hiddloading()
             self?.arrayData = data
             self?.ui()
             }, onError: { [weak self](error) in
-                 HudTool.hiddloading()
+         //        HudTool.hiddloading()
                 self?.collect?.removeFromSuperview()
                
                 self?.showReloadButon {

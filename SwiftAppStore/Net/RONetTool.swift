@@ -51,7 +51,13 @@ class RONetTool: NSObject {
             let dic = data as! Dictionary<String, Any>
             print("\n \(responds) \n\n \(dic) jsonString\n")
             return Observable.create({ (observe) -> Disposable in
-                if(dic["code"] as! Int == 1){
+                var code = 0
+                if dic["code"] is String{
+                    code = Int(dic["code"] as! String)!
+                }else{
+                    code = dic["code"]  as! Int
+                }
+                if(code == 1){
                     if dic["data"] != nil{
                         observe.onNext(dic["data"]!)
                     }else{

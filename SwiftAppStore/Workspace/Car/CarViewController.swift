@@ -21,10 +21,15 @@ class CarViewController: MCRootViewController {
         table.separatorStyle = .none
         table.backgroundColor = viewBackColor
         carBtn.layer.cornerRadius = 10
-        HudTool.showloding()
+      
     }
     
     @IBAction func order(_ sender: Any) {
+        if AdminTool.share.user == nil {
+              self.present( MCNavegationController(rootViewController: LoginViewController()), animated: true, completion: nil)
+          //  HudTool.showflashMessage(message: "请先登录")
+            return
+        }
         var arrayNew = [Product]()
         
         var dic = [String:Any]()
@@ -60,7 +65,8 @@ class CarViewController: MCRootViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         if AdminTool.share.user == nil {
-            self.present( MCNavegationController(rootViewController: LoginViewController()), animated: true, completion: nil)
+          //  self.present( MCNavegationController(rootViewController: LoginViewController()), animated: true, completion: nil)
+            HudTool.showflashMessage(message: "请先登录")
             return
         }
        self.requestForgood()

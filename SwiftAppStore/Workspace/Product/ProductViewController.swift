@@ -28,6 +28,8 @@ class ProductViewController: MCRootViewController {
     @IBOutlet weak var collectBtn: UIButton!
     @IBOutlet weak var carButtnon: UIButton!
     @IBOutlet weak var table: UITableView!
+    var butnright = UILabel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "商品详情"
@@ -110,7 +112,7 @@ class ProductViewController: MCRootViewController {
         self.labName?.text = cate?.productName
         self.labPrice?.text = cate?.productPrice1
         self.labPricerignht?.text = cate?.productPrice2
-       
+        butnright.text = "月销量：\(cate?.hits ?? 125)"
     }
 
     /*
@@ -316,6 +318,7 @@ class ProductViewController: MCRootViewController {
         labBtnT.backgroundColor = viewLineColor
         labBtnT.textAlignment = .center
         labBtnT.textColor = UIColor.darkGray
+        butnright = labBtnT
         labBtnT.font = UIFont.systemFont(ofSize: 12)
         v.addSubview(labBtnT)
         labBtnT.snp.makeConstraints({ (make) in

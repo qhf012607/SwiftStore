@@ -48,7 +48,8 @@ class CateViewController: MCRootViewController {
             self?.leftTable.reloadData()
             self?.rightTable.reloadData()
         }, onError: { (error) in
-            
+            HudTool.hiddloading()
+            HudTool.showflashMessage(message: "网络异常")
         }, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
     }
     
