@@ -14,6 +14,12 @@
 		D5018C4622F5771700724A0F /* AddressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5018C4522F5771700724A0F /* AddressModel.swift */; };
 		D5018C4922F58BC800724A0F /* AddressDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5018C4722F58BC800724A0F /* AddressDetailViewController.swift */; };
 		D5018C4A22F58BC800724A0F /* AddressDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5018C4822F58BC800724A0F /* AddressDetailViewController.xib */; };
+		D5129F4C2326357500D51C6A /* area.plist in Resources */ = {isa = PBXBuildFile; fileRef = D5129F462326357500D51C6A /* area.plist */; };
+		D5129F4D2326357500D51C6A /* EWAddressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5129F472326357500D51C6A /* EWAddressModel.swift */; };
+		D5129F4E2326357500D51C6A /* EWAddressPickViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5129F482326357500D51C6A /* EWAddressPickViewTableViewCell.swift */; };
+		D5129F4F2326357500D51C6A /* EWAddressPickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5129F492326357500D51C6A /* EWAddressPickView.swift */; };
+		D5129F502326357500D51C6A /* EWAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5129F4A2326357500D51C6A /* EWAddressViewController.swift */; };
+		D5129F512326357500D51C6A /* EWAddressPresentAnimated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5129F4B2326357500D51C6A /* EWAddressPresentAnimated.swift */; };
 		D5392E6922E84475004AAD9D /* ErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5392E6822E84475004AAD9D /* ErrorModel.swift */; };
 		D5392E6E22E8572A004AAD9D /* MCNavegationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5392E6B22E85729004AAD9D /* MCNavegationController.swift */; };
 		D5392E6F22E8572A004AAD9D /* MCRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5392E6C22E85729004AAD9D /* MCRootViewController.swift */; };
@@ -46,12 +52,6 @@
 		D551C7E922FD4E900085251D /* WkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D551C7E722FD4E900085251D /* WkViewController.swift */; };
 		D551C7EA22FD4E900085251D /* WkViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D551C7E822FD4E900085251D /* WkViewController.xib */; };
 		D569390A22F7DDD1004227A9 /* MCFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D569390922F7DDD1004227A9 /* MCFileManager.swift */; };
-		D578FFD023023E6F007F062D /* area.plist in Resources */ = {isa = PBXBuildFile; fileRef = D578FFCA23023E6F007F062D /* area.plist */; };
-		D578FFD123023E6F007F062D /* EWAddressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D578FFCB23023E6F007F062D /* EWAddressModel.swift */; };
-		D578FFD223023E6F007F062D /* EWAddressPickViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D578FFCC23023E6F007F062D /* EWAddressPickViewTableViewCell.swift */; };
-		D578FFD323023E6F007F062D /* EWAddressPickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D578FFCD23023E6F007F062D /* EWAddressPickView.swift */; };
-		D578FFD423023E6F007F062D /* EWAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D578FFCE23023E6F007F062D /* EWAddressViewController.swift */; };
-		D578FFD523023E6F007F062D /* EWAddressPresentAnimated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D578FFCF23023E6F007F062D /* EWAddressPresentAnimated.swift */; };
 		D57B2A6022E6F8E9001B0EFF /* RONetCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57B2A5F22E6F8E9001B0EFF /* RONetCenter.swift */; };
 		D57B2A6222E701BC001B0EFF /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57B2A6122E701BC001B0EFF /* HomeModel.swift */; };
 		D57B2A6522E805C9001B0EFF /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57B2A6422E805C9001B0EFF /* Product.swift */; };
@@ -152,6 +152,12 @@
 		D5018C4522F5771700724A0F /* AddressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressModel.swift; sourceTree = "<group>"; };
 		D5018C4722F58BC800724A0F /* AddressDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressDetailViewController.swift; sourceTree = "<group>"; };
 		D5018C4822F58BC800724A0F /* AddressDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddressDetailViewController.xib; sourceTree = "<group>"; };
+		D5129F462326357500D51C6A /* area.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = area.plist; sourceTree = "<group>"; };
+		D5129F472326357500D51C6A /* EWAddressModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EWAddressModel.swift; sourceTree = "<group>"; };
+		D5129F482326357500D51C6A /* EWAddressPickViewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EWAddressPickViewTableViewCell.swift; sourceTree = "<group>"; };
+		D5129F492326357500D51C6A /* EWAddressPickView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EWAddressPickView.swift; sourceTree = "<group>"; };
+		D5129F4A2326357500D51C6A /* EWAddressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EWAddressViewController.swift; sourceTree = "<group>"; };
+		D5129F4B2326357500D51C6A /* EWAddressPresentAnimated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EWAddressPresentAnimated.swift; sourceTree = "<group>"; };
 		D5392E6822E84475004AAD9D /* ErrorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorModel.swift; sourceTree = "<group>"; };
 		D5392E6B22E85729004AAD9D /* MCNavegationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MCNavegationController.swift; sourceTree = "<group>"; };
 		D5392E6C22E85729004AAD9D /* MCRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MCRootViewController.swift; sourceTree = "<group>"; };
@@ -192,12 +198,6 @@
 		D551C7E722FD4E900085251D /* WkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WkViewController.swift; sourceTree = "<group>"; };
 		D551C7E822FD4E900085251D /* WkViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WkViewController.xib; sourceTree = "<group>"; };
 		D569390922F7DDD1004227A9 /* MCFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCFileManager.swift; sourceTree = "<group>"; };
-		D578FFCA23023E6F007F062D /* area.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = area.plist; sourceTree = "<group>"; };
-		D578FFCB23023E6F007F062D /* EWAddressModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EWAddressModel.swift; sourceTree = "<group>"; };
-		D578FFCC23023E6F007F062D /* EWAddressPickViewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EWAddressPickViewTableViewCell.swift; sourceTree = "<group>"; };
-		D578FFCD23023E6F007F062D /* EWAddressPickView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EWAddressPickView.swift; sourceTree = "<group>"; };
-		D578FFCE23023E6F007F062D /* EWAddressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EWAddressViewController.swift; sourceTree = "<group>"; };
-		D578FFCF23023E6F007F062D /* EWAddressPresentAnimated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EWAddressPresentAnimated.swift; sourceTree = "<group>"; };
 		D57B2A5F22E6F8E9001B0EFF /* RONetCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RONetCenter.swift; sourceTree = "<group>"; };
 		D57B2A6122E701BC001B0EFF /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		D57B2A6422E805C9001B0EFF /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
@@ -335,6 +335,19 @@
 			path = Address;
 			sourceTree = "<group>";
 		};
+		D5129F452326357500D51C6A /* EWAddressPicker */ = {
+			isa = PBXGroup;
+			children = (
+				D5129F462326357500D51C6A /* area.plist */,
+				D5129F472326357500D51C6A /* EWAddressModel.swift */,
+				D5129F482326357500D51C6A /* EWAddressPickViewTableViewCell.swift */,
+				D5129F492326357500D51C6A /* EWAddressPickView.swift */,
+				D5129F4A2326357500D51C6A /* EWAddressViewController.swift */,
+				D5129F4B2326357500D51C6A /* EWAddressPresentAnimated.swift */,
+			);
+			path = EWAddressPicker;
+			sourceTree = "<group>";
+		};
 		D5392E6A22E85729004AAD9D /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -448,20 +461,6 @@
 				D5C97ADC22F9100800C7ED59 /* CoupousSelectViewController.xib */,
 			);
 			path = Coupon;
-			sourceTree = "<group>";
-		};
-		D578FFC923023E6F007F062D /* EWAddressPicker */ = {
-			isa = PBXGroup;
-			children = (
-				D578FFCA23023E6F007F062D /* area.plist */,
-				D578FFCB23023E6F007F062D /* EWAddressModel.swift */,
-				D578FFCC23023E6F007F062D /* EWAddressPickViewTableViewCell.swift */,
-				D578FFCD23023E6F007F062D /* EWAddressPickView.swift */,
-				D578FFCE23023E6F007F062D /* EWAddressViewController.swift */,
-				D578FFCF23023E6F007F062D /* EWAddressPresentAnimated.swift */,
-			);
-			name = EWAddressPicker;
-			path = "../../../../Downloads/EWAddressPicker-Swift-master/EWAddressPicker/EWAddressPicker";
 			sourceTree = "<group>";
 		};
 		D57B2A6322E805B3001B0EFF /* Model */ = {
@@ -698,7 +697,7 @@
 		D5DBCF0C22F4283100C30150 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
-				D578FFC923023E6F007F062D /* EWAddressPicker */,
+				D5129F452326357500D51C6A /* EWAddressPicker */,
 				D5DBCF0D22F4284F00C30150 /* HudTool.swift */,
 				D569390922F7DDD1004227A9 /* MCFileManager.swift */,
 			);
@@ -858,7 +857,7 @@
 				D5C7133A22EE98560005F352 /* CateLeftTableViewCell.xib in Resources */,
 				D5DBCF1822F4317600C30150 /* OrderSigleCell.xib in Resources */,
 				D5DBCF1C22F431A000C30150 /* orderDiscountCel.xib in Resources */,
-				D578FFD023023E6F007F062D /* area.plist in Resources */,
+				D5129F4C2326357500D51C6A /* area.plist in Resources */,
 				D551C7EA22FD4E900085251D /* WkViewController.xib in Resources */,
 				D53DD1A722EAAB8B00CFF8DB /* HomeCollectionViewCell.xib in Resources */,
 				D5B6DE7C22FA7A9900BA0201 /* MyTableViewCell.xib in Resources */,
@@ -952,7 +951,7 @@
 				D5C7134722F0274D0005F352 /* CateSecondLVCell.swift in Sources */,
 				D59BA9EF22E592D5007D1434 /* ViewController.swift in Sources */,
 				D5B6DE9A22FBF2F600BA0201 /* OrderDetailModel.swift in Sources */,
-				D578FFD423023E6F007F062D /* EWAddressViewController.swift in Sources */,
+				D5129F502326357500D51C6A /* EWAddressViewController.swift in Sources */,
 				D551C7D822FD16FF0085251D /* UIViewExt.m in Sources */,
 				D57B2A6222E701BC001B0EFF /* HomeModel.swift in Sources */,
 				D59BA9ED22E592D5007D1434 /* AppDelegate.swift in Sources */,
@@ -972,7 +971,7 @@
 				D551C7DA22FD16FF0085251D /* DWQTagView.m in Sources */,
 				D5392E6F22E8572A004AAD9D /* MCRootViewController.swift in Sources */,
 				D5AF8BDC22F81FE2003D021F /* CouponsCell.swift in Sources */,
-				D578FFD323023E6F007F062D /* EWAddressPickView.swift in Sources */,
+				D5129F4F2326357500D51C6A /* EWAddressPickView.swift in Sources */,
 				D5B6DE7722FA6B7F00BA0201 /* CarGood.swift in Sources */,
 				D569390A22F7DDD1004227A9 /* MCFileManager.swift in Sources */,
 				D5DBCF1B22F431A000C30150 /* orderDiscountCel.swift in Sources */,
@@ -991,7 +990,7 @@
 				D548084622F2DBC500379833 /* PurchaseView.swift in Sources */,
 				D5B6DE8722FABAEB00BA0201 /* CollectViewController.swift in Sources */,
 				D551C7D922FD16FF0085251D /* DWQSearchBar.m in Sources */,
-				D578FFD223023E6F007F062D /* EWAddressPickViewTableViewCell.swift in Sources */,
+				D5129F4E2326357500D51C6A /* EWAddressPickViewTableViewCell.swift in Sources */,
 				D5B6DE8B22FABEE000BA0201 /* SyystemViewController.swift in Sources */,
 				D5018C4322F569D100724A0F /* AddressViewController.swift in Sources */,
 				D5392E7F22E85743004AAD9D /* UIViewControllerExt.swift in Sources */,
@@ -1009,8 +1008,8 @@
 				D5DBCF1F22F431BC00C30150 /* OrderAdressCell.swift in Sources */,
 				D53DD1A622EAAB8B00CFF8DB /* HomeCollectionViewCell.swift in Sources */,
 				D551C7DC22FD16FF0085251D /* HistorySearchCell.m in Sources */,
-				D578FFD523023E6F007F062D /* EWAddressPresentAnimated.swift in Sources */,
-				D578FFD123023E6F007F062D /* EWAddressModel.swift in Sources */,
+				D5129F512326357500D51C6A /* EWAddressPresentAnimated.swift in Sources */,
+				D5129F4D2326357500D51C6A /* EWAddressModel.swift in Sources */,
 				D5C97AE922F94DEC00C7ED59 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1181,16 +1180,17 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = L53V5JPD38;
+				DEVELOPMENT_TEAM = Q739RC8A26;
 				INFOPLIST_FILE = SwiftAppStore/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = mbt.d.SwiftAppStore;
+				PRODUCT_BUNDLE_IDENTIFIER = cn.store.manb;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "SwiftAppStore/Workspace/Search/SwiftAppStore-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1206,16 +1206,17 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = L53V5JPD38;
+				DEVELOPMENT_TEAM = Q739RC8A26;
 				INFOPLIST_FILE = SwiftAppStore/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = mbt.d.SwiftAppStore;
+				PRODUCT_BUNDLE_IDENTIFIER = cn.store.manb;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "SwiftAppStore/Workspace/Search/SwiftAppStore-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
